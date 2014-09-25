@@ -1,3 +1,6 @@
+
+![RIG - A CSS Framework by Codeship](https://raw.githubusercontent.com/codeship/RIG/master/doc-assets/img/readme-title.jpg)
+
 RIG 0.1
 ===
 
