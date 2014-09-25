@@ -76,7 +76,13 @@ figcaption,
 ul,
 ol {
   display: block;
-  box-sizing: border-box; }
+  -moz-box-sizing: border-box;
+       box-sizing: border-box; }
+
+::-moz-selection {
+  text-shadow: none;
+  background: #5A95E5;
+  color: #FFF; }
 
 ::selection {
   text-shadow: none;
@@ -135,13 +141,14 @@ h6, .like-h6 {
 .ta-right {
   text-align: right; }
 
-.ta-jsutify {
+.ta-justify {
   text-align: justify; }
 
 a {
   color: #5A95E5;
   cursor: pointer;
-  transition: color 100ms, background-image 100ms;
+  -webkit-transition: color 100ms, background-image 100ms;
+          transition: color 100ms, background-image 100ms;
   text-decoration: none;
   font-size: 16px;
   line-height: 1.42em;
@@ -157,11 +164,13 @@ a {
   background-repeat: repeat-x;
   background-size: .1rem .1rem;
   background-position: 0 100%;
+  background-image: -webkit-linear-gradient(top, transparent 50%, #5A95E5 50%);
   background-image: linear-gradient(to bottom, transparent 50%, #5A95E5 50%); }
   .link:hover, p a:hover {
     background-repeat: repeat-x;
     background-size: .1rem .1rem;
     background-position: 0 100%;
+    background-image: -webkit-linear-gradient(top, transparent 50%, #377edf 50%);
     background-image: linear-gradient(to bottom, transparent 50%, #377edf 50%); }
 
 p {
@@ -208,7 +217,9 @@ ul, ol {
   font-size: .8em;
   color: #101b27;
   position: absolute;
-  transform: translate(-1.5rem, 0.2rem); }
+  -webkit-transform: translate(-1.5rem, 0.2rem);
+      -ms-transform: translate(-1.5rem, 0.2rem);
+          transform: translate(-1.5rem, 0.2rem); }
 
 .ul--check li::before {
   content: "✓"; }
@@ -230,7 +241,9 @@ ul, ol {
     counter-increment: list-counter;
     content: counter(list-counter);
     width: 1em;
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
     opacity: .3; }
 
 /*
@@ -259,6 +272,30 @@ input:focus, button:focus, textarea:focus, select:focus {
   box-shadow: none; }
 
 /*
+ * ------------------------------------------------------------------------------ *
+ * CODE
+ * ------------------------------------------------------------------------------ *
+ */
+code {
+  background: #efefef;
+  padding: 0 .2em;
+  border-radius: .2rem;
+  margin: 0 .1em; }
+
+pre {
+  border: 1px solid #f0f0f0;
+  border-radius: .2rem;
+  padding: 1rem; }
+  pre code {
+    background: none; }
+
+.contentWrapper {
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+  max-width: 68rem; }
+
+/*
 ** ====================================================
 ** GRID
 **
@@ -268,13 +305,9 @@ input:focus, button:focus, textarea:focus, select:focus {
 .grid {
   display: block;
   width: 100%;
-  padding: 0 10px;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   font-size: 0; }
-  @media only screen and (max-width: 45rem) {
-    .grid {
-      padding: 0;
-      margin: 0; } }
 
 .row {
   display: block;
@@ -1079,3 +1112,60 @@ input:focus, button:focus, textarea:focus, select:focus {
 .col--cling,
 .grid--cling {
   padding: 0; }
+
+@media only screen and (min-width: 60rem) {
+  .visible-on-lg {
+    display: inherit; }
+
+  .hidden-on-lg {
+    display: none !important; }
+
+  .visible-on-md,
+  .visible-on-sm,
+  .visible-on-xs {
+    display: none; } }
+@media only screen and (min-width: 45rem) and (max-width: 60rem) {
+  .only-till-md {
+    display: none !important; }
+
+  .hidden-on-md {
+    display: none !important; }
+
+  .visible-on-md {
+    display: inherit; }
+
+  .visible-on-lg,
+  .visible-on-sm,
+  .visible-on-xs {
+    display: none; } }
+@media only screen and (min-width: 30rem) and (max-width: 45rem) {
+  .only-till-md,
+  .only-till-sm {
+    display: none !important; }
+
+  .hidden-on-sm {
+    display: none !important; }
+
+  .visible-on-sm {
+    display: inherit; }
+
+  .visible-on-lg,
+  .visible-on-md,
+  .visible-on-xs {
+    display: none; } }
+@media only screen and (max-width: 30rem) {
+  .only-till-md,
+  .only-till-sm,
+  .only-till-xs {
+    display: none !important; }
+
+  .hidden-on-xs {
+    display: none !important; }
+
+  .visible-on-xs {
+    display: inherit; }
+
+  .visible-on-lg,
+  .visible-on-md,
+  .visible-on-sm {
+    display: none; } }

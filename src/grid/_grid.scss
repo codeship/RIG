@@ -10,15 +10,8 @@
 .grid {
   display: block;
   width: 100%;
-  padding: 0 $base-padding;
   box-sizing: border-box;
   font-size: 0;
-
-  // Remove the Grid Padding on Smaller Screens to gain space
-  @media only screen and (max-width: $bpMedium) {
-    padding: 0;
-    margin: 0;
-  }
 }
 
 // Sometimes you want to wrap cols in rows. Take this...
@@ -141,4 +134,87 @@
 .col--cling,
 .grid--cling {
   padding: 0;
+}
+
+@media only screen and (min-width: $bpLarge) {
+  // For Large Columns
+  .visible-on-lg {
+    display: inherit;
+  }
+
+  .hidden-on-lg {
+    display: none !important;
+  }
+
+  .visible-on-md,
+  .visible-on-sm,
+  .visible-on-xs {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $bpMedium) and (max-width: $bpLarge) {
+  // For Medium Screens
+  .only-till-md {
+    display: none !important;
+  }
+
+  .hidden-on-md {
+    display: none !important;
+  }
+
+  .visible-on-md {
+    display: inherit;
+  }
+
+  .visible-on-lg,
+  .visible-on-sm,
+  .visible-on-xs {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $bpSmall) and (max-width: $bpMedium) {
+  // For Smaller Screens
+  .only-till-md,
+  .only-till-sm {
+    display: none !important;
+  }
+
+  .hidden-on-sm {
+    display: none !important;
+  }
+
+  .visible-on-sm {
+    display: inherit;
+  }
+
+  .visible-on-lg,
+  .visible-on-md,
+  .visible-on-xs {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $bpSmall) {
+  // For Smaller Screens
+  .only-till-md,
+  .only-till-sm,
+  .only-till-xs {
+    display: none !important;
+  }
+
+  .hidden-on-xs {
+    display: none !important;
+  }
+
+  .visible-on-xs {
+    display: inherit;
+  }
+
+  .visible-on-lg,
+  .visible-on-md,
+  .visible-on-sm {
+    display: none;
+  }
 }
