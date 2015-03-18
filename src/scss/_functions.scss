@@ -1,0 +1,9 @@
+// Function returns values a zindex from the element you pass
+@function z-index($element) {
+  @return map-get($m-zindex, $element);
+}
+
+// Function returns values form the $m-colors Map, default value base should always be set
+@function color($color-name, $filter: base) {
+  @return map-get(map-get($m-colors, $color-name), $filter);
+}

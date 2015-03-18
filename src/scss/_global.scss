@@ -6,15 +6,16 @@
 html {
   font-size: $base-font-size;
 
-  @media screen and (max-width: $bp-s) {
+  @include smaller-than('small-screen') {
     font-size: round($base-font-size*1.2);
   }
+
 }
 
 body {
   padding: 0;
   font-family: $f-body;
-  color: $c-body;
+  color: color('body');
   text-align: center;
 }
 
@@ -43,6 +44,7 @@ h4,
 h1,
 .like-h1 {
   font-size: 2.5rem;
+  z-index: z-index('header');
 }
 
 h2,
@@ -64,14 +66,14 @@ p {
   font-size: 1rem;
   line-height: 1.4em;
 
-  @media screen and (max-width: $bp-s) {
+  @include smaller-than('small-screen') {
     line-height: 1.2em;
   }
 }
 
 em {
   font-style: italic;
-  color: $c-body-em;
+  color: color('body', 'em');
 }
 
 strong {
@@ -79,14 +81,14 @@ strong {
 }
 
 a {
-  color: $c-anchor;
+  color: color('anchor');
   transition: color 200ms, background-image 200ms;
   text-decoration: none;
-  @include sexyUnderline($c-anchor);
+  @include sexy-underline(color('anchor'));
 
   &:hover {
-    color: $c-anchor-hover;
-    @include sexyUnderline($c-anchor-hover);
+    color: color('anchor', 'hover');
+    @include sexy-underline(color('anchor', 'hover'));
   }
 }
 

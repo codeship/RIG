@@ -5,8 +5,8 @@
 //
 // ************************************
 $base-padding: 15px;
+$base-border-radius: 4px;
 $base-col-padding: 15px;
-
 $base-font-size: 16px;
 
 $f-heading: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
@@ -29,6 +29,13 @@ $bp-xs: 400px;
 $bp-s: 600px;
 $bp-m: 900px;
 $bp-l: 1100px;
+
+$m-breakpoints: (
+  supersmall-screen: 400px,
+  small-screen: 600px,
+  medium-screen: 900px,
+  large-screen: 1100px
+);
 
 // ************************************
 //
@@ -113,21 +120,34 @@ $all-text-inputs-focus: 'input[type="email"]:focus,
 //
 // ************************************
 
-$c-body: #242628;
-$c-body-em: #303438;
+$m-colors: (
+  'body': (
+    base: #242628,
+    bg: #fff,
+    em: #303438
+  ),
+  'anchor': (
+    base: #4a90e2,
+    hover: #2e77cc
+  ),
+  'input': (
+    base: #242628,
+    border: #ccc,
+    borderHover: #999
+  )
+);
 
-$c-anchor: #4a90e2;
-$c-anchor-hover: #2e77cc;
 
+// ************************************
+//
+// Z-index
+//
+// ************************************
 
-// Input Colors
-$c-input-border: #ccc;
-$c-input-border-hover: #999;
-
-
-
-
-
+$m-zindex: (
+  modal: 110,
+  header: 100
+);
 
 
 

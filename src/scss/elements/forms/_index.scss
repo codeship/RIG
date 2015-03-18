@@ -1,19 +1,22 @@
 #{$all-text-inputs},
-textarea {
+textarea,
+select {
   display: block;
   width: 100%;
   font-size: 1rem;
-  border: 1px solid $c-input-border;
+  border: 1px solid color('input', 'border');
+  border-radius: $base-border-radius;
   margin-bottom: $base-padding;
   box-sizing: border-box;
   transition: border 200ms;
 }
 
 #{$all-text-inputs-focus},
-textarea:focus {
+textarea:focus,
+select:focus {
   outline: none;
   box-shadow: none;
-  border: 1px solid $c-input-border-hover;
+  border: 1px solid color('input', 'borderHover');
 }
 
 .label {
@@ -25,4 +28,5 @@ textarea:focus {
 @import 'inputs';
 @import 'textarea';
 @import 'checkbox';
+@import 'select';
 

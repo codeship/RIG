@@ -1,8 +1,28 @@
 // Mixins for RIG
 
-@mixin sexyUnderline($color, $percent: 90%) {
+@mixin sexy-underline($color, $percent: 90%) {
   background-image: linear-gradient(to bottom, #fff 75%, $color 75%);
   background-size: 2px 2px;
   background-position: 0 $percent;
   background-repeat: repeat-x;
+}
+
+@mixin appearance($value) {
+  appearance: #{$value};
+  -moz-appearance: #{$value}; /* Firefox */
+  -webkit-appearance: #{$value}; /* Safari and Chrome */
+}
+
+@mixin smaller-than($breakpoint-name) {
+  $width: map-get($m-breakpoints, $breakpoint-name);
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin larger-than($breakpoint-name) {
+  $width: map-get($m-breakpoints, $breakpoint-name);
+  @media screen and (min-width: $width) {
+    @content;
+  }
 }
