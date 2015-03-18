@@ -11,9 +11,11 @@
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "latest",
     "gulp-jade": "^1.0.0",
+    "gulp-plumber": "^1.0.0",
     "gulp-rename": "^1.2.0",
     "gulp-sass": "latest",
     "gulp-scss-lint": "latest",
+    "gulp-watch": "^4.2.0",
     "require-dir": "latest"
   },
   "dependencies": {}
