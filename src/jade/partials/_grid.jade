@@ -1,0 +1,68 @@
+h1 GridSysytem
+
+p This Grid is Percentage based. From 5 - 100%. It is seperated by 5% steps to make calculations easy and intuitive. If you want to use columns divided by 3 you can use 33% and 66%.
+
+p columns are hosted in rows and are fully responsive if you want them to.
+
+h4 Example:
+
+.grid.grid-presentation
+  .row
+    .col.s50.m25.l20
+      p .col.s50.m25.l20
+    .col.s50.m25.l20
+      p .col.s50.m25.l20
+    .col.s50.m25.l20
+      p .col.s50.m25.l20
+    .col.s50.m25.l20
+      p .col.s50.m25.l20
+    .col.s50.m25.l20
+      p .col.s50.m25.l20
+
+h4 Example:
+p Nesting Grids in each other
+
+.grid.grid-presentation
+  .row
+    .col
+      .row
+        .col.s50.m50.l25
+          p .col.s50.m50.l25
+        .col.s50.m50.l25
+          p .col.s50.m50.l25
+          .row
+            .col.s33.m50.-cling
+              p .col.s33.m50
+            .col.s33.l70.-cling
+              p .col.s33.l70
+            .col.s33.-cling
+              p .col.s33
+
+h4 Example:
+p Using Tail and Offset for handling spaces between you columns
+
+.grid.grid-presentation
+  .row
+    .col.s70.s-offset15.m50.m-offset25
+      p .col.s70.s-offset15.m50.m-offset25
+
+.grid.grid-presentation
+  .row
+    .col.s50.s-tail10
+      p .col.s50.s-tail10
+    .col.s40
+      p .col.s40
+
+
+
+
+
+
+
+
+
+
+
+
+
+

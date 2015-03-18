@@ -1,0 +1,26 @@
+h1 Forms
+
+p Building some Form examples
+
+form.form
+  .grid
+    .row
+      .col.m75.l50
+        label.label(for="name")
+          span._title Please enter your name
+          input#name(type="text", name="name")
+      .col.m75.l50
+        label.label(for="email")
+          span._title Please enter your name
+          input#email(type="email", name="email")
+      .col.m75.l50
+        label.label(for="body")
+          textarea(name="body")
+      .col.m75.l50
+        label.label.-checkbox
+          input(type="checkbox")
+          span._title Please Check this box
+
+        label.label.-checkbox
+          input(type="checkbox")
+          span._title PAnother Checkbox
