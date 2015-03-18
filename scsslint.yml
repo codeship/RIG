@@ -1,0 +1,21 @@
+linters:
+  ColorVariable:
+    enabled: false
+  IdSelector:
+    enabled: false
+  ImportantRule:
+    enabled: false
+  NameFormat:
+    enabled: false
+  NestingDepth:
+    max_depth: 5
+  PlaceholderInExtend:
+    enabled: false
+  PropertySortOrder:
+    enabled: false
+  QualifyingElement:
+    enabled: false
+  SelectorDepth:
+    max_depth: 5
+  SelectorFormat:
+    enabled: false

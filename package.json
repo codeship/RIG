@@ -1,0 +1,19 @@
+{
+  "name": "rig-2",
+  "description": "RIG CSS Framework by Codeship",
+  "author": "Roman Kuba (roman@codeship.com)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/codeship/rig.git"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.2.3",
+    "gulp": "^3.8.11",
+    "gulp-jade": "^1.0.0",
+    "gulp-autoprefixer": "latest",
+    "gulp-sass": "latest",
+    "gulp-scss-lint": "latest",
+    "require-dir": "latest"
+  },
+  "dependencies": {}
+}
