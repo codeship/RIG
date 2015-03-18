@@ -9,8 +9,9 @@
   "devDependencies": {
     "browser-sync": "^2.2.3",
     "gulp": "^3.8.11",
-    "gulp-jade": "^1.0.0",
     "gulp-autoprefixer": "latest",
+    "gulp-jade": "^1.0.0",
+    "gulp-rename": "^1.2.0",
     "gulp-sass": "latest",
     "gulp-scss-lint": "latest",
     "require-dir": "latest"
