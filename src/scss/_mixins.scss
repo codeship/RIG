@@ -1,0 +1,8 @@
+// Mixins for RIG
+
+@mixin sexyUnderline($color, $percent: 90%) {
+  background-image: linear-gradient(to bottom, #fff 75%, $color 75%);
+  background-size: 2px 2px;
+  background-position: 0 $percent;
+  background-repeat: repeat-x;
+}

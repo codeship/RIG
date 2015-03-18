@@ -1,0 +1,28 @@
+#{$all-text-inputs},
+textarea {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid $c-input-border;
+  margin-bottom: $base-padding;
+  box-sizing: border-box;
+  transition: border 200ms;
+}
+
+#{$all-text-inputs-focus},
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid $c-input-border-hover;
+}
+
+.label {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@import 'inputs';
+@import 'textarea';
+@import 'checkbox';
+

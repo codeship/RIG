@@ -1,0 +1,147 @@
+
+// ************************************
+//
+// Basic Settings, Values and Fonts
+//
+// ************************************
+$base-padding: 15px;
+$base-col-padding: 15px;
+
+$base-font-size: 16px;
+
+$f-heading: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+$f-body: Tahoma, Verdana, Segoe, sans-serif;
+
+// ************************************
+//
+// Grid System Settings & Breakpoints
+//
+// ************************************
+
+$_grid-sizes: 5, 10, 15, 20, 25, 30, 33, 35, 40, 45, 50, 55, 60, 65, 66, 70, 75, 80, 85, 90, 95, 100;
+
+// Change with caution as this effects
+// elements/grid/_grid-mixins.scss
+$_grid-ranges: 's', 'm', 'l';
+
+// BREAKPOINTS
+$bp-xs: 400px;
+$bp-s: 600px;
+$bp-m: 900px;
+$bp-l: 1100px;
+
+// ************************************
+//
+// Form Classes and Values
+//
+// ************************************
+//
+// NOTE: As this project uses Libsass for compiling we have to do a workaround
+// as selector operations are not supported yet
+
+$_inputs-list: (
+       'input[type="email"]',
+       'input[type="number"]',
+       'input[type="password"]',
+       'input[type="search"]',
+       'input[type="tel"]',
+       'input[type="text"]',
+       'input[type="url"]',
+       'input[type="color"]',
+       'input[type="date"]',
+       'input[type="datetime"]',
+       'input[type="datetime-local"]',
+       'input[type="month"]',
+       'input[type="time"]',
+       'input[type="week"]'
+       );
+
+// Bare inputs
+// $all-text-inputs: selector-append($_inputs-list, '');
+$all-text-inputs: 'input[type="email"],
+                  input[type="number"],
+                  input[type="password"],
+                  input[type="search"],
+                  input[type="tel"],
+                  input[type="text"],
+                  input[type="url"],
+                  input[type="color"],
+                  input[type="date"],
+                  input[type="datetime"],
+                  input[type="datetime-local"],
+                  input[type="month"],
+                  input[type="time"],
+                  input[type="week"]';
+
+// Hover Pseudo-class
+// $all-text-inputs-hover: selector-append($_inputs-list, ':hover');
+$all-text-inputs-hover: 'input[type="email"]:hover,
+                  input[type="number"]:hover,
+                  input[type="password"]:hover,
+                  input[type="search"]:hover,
+                  input[type="tel"]:hover,
+                  input[type="text"]:hover,
+                  input[type="url"]:hover,
+                  input[type="color"]:hover,
+                  input[type="date"]:hover,
+                  input[type="datetime"]:hover,
+                  input[type="datetime-local"]:hover,
+                  input[type="month"]:hover,
+                  input[type="time"]:hover,
+                  input[type="week"]:hover';
+
+// Focus Pseudo-class
+// $all-text-inputs-focus: selector-append($_inputs-list, ':focus');
+$all-text-inputs-focus: 'input[type="email"]:focus,
+                  input[type="number"]:focus,
+                  input[type="password"]:focus,
+                  input[type="search"]:focus,
+                  input[type="tel"]:focus,
+                  input[type="text"]:focus,
+                  input[type="url"]:focus,
+                  input[type="color"]:focus,
+                  input[type="date"]:focus,
+                  input[type="datetime"]:focus,
+                  input[type="datetime-local"]:focus,
+                  input[type="month"]:focus,
+                  input[type="time"]:focus,
+                  input[type="week"]:focus';
+
+// ************************************
+//
+// Colors
+//
+// ************************************
+
+$c-body: #242628;
+$c-body-em: #303438;
+
+$c-anchor: #4a90e2;
+$c-anchor-hover: #2e77cc;
+
+
+// Input Colors
+$c-input-border: #ccc;
+$c-input-border-hover: #999;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

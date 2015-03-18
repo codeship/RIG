@@ -1,0 +1,47 @@
+// GRID SYSTEM
+// Why another Grid system ?
+// - Well most grids are buildt an top of a 12 col layout.
+// For me this personally makes no sense as it also is hard
+// to calculate this kind of behaviour.
+// So we will build a new kind of grid based on percent numbers
+// Example:
+// large50, medium10, small5, and so on :)
+// And everything is Mobile first, so small grids will bubble up.
+
+@import 'grid-mixins';
+
+// You can nest your contents in a container if you like
+.container {
+  display: inline-block;
+  width: 100%;
+  max-width: $bp-l;
+  text-align: left;
+}
+
+.grid {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 0;
+
+  .col {
+    width: 100%;
+    display: inline-block;
+    padding: 0 $base-col-padding;
+    font-size: 1rem;
+    vertical-align: top;
+
+    @include makeGrid();
+
+
+    &.-cling {
+      padding: 0;
+    }
+  }
+
+  .row {
+    display: block;
+    width: 100%;
+    font-size: 0;
+  }
+}

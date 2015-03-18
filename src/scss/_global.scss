@@ -1,0 +1,113 @@
+//
+//
+// GENERAL SETTINGS
+//
+
+html {
+  font-size: $base-font-size;
+
+  @media screen and (max-width: $bp-s) {
+    font-size: round($base-font-size*1.2);
+  }
+}
+
+body {
+  padding: 0;
+  font-family: $f-body;
+  color: $c-body;
+  text-align: center;
+}
+
+div,
+article {
+  display: block;
+  box-sizing: border-box; // Very important for everything
+}
+
+//
+//
+// Typographic Settings
+//
+
+h1,
+h2,
+h3,
+h4,
+.like-h1,
+.like-h2,
+.like-h3,
+.like-h4 {
+  font-family: $f-heading;
+}
+
+h1,
+.like-h1 {
+  font-size: 2.5rem;
+}
+
+h2,
+.like-h2 {
+  font-size: 2rem;
+}
+
+h3,
+.like-h3 {
+  font-size: 1.6rem;
+}
+
+h4,
+.like-h4 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.4em;
+
+  @media screen and (max-width: $bp-s) {
+    line-height: 1.2em;
+  }
+}
+
+em {
+  font-style: italic;
+  color: $c-body-em;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  color: $c-anchor;
+  transition: color 200ms, background-image 200ms;
+  text-decoration: none;
+  @include sexyUnderline($c-anchor);
+
+  &:hover {
+    color: $c-anchor-hover;
+    @include sexyUnderline($c-anchor-hover);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

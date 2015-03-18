@@ -1,0 +1,23 @@
+.label.-checkbox {
+  position: relative;
+
+  padding: $base-padding;
+
+  > ._title {
+    &::before {
+      content: 'UNCHECKED';
+    }
+
+  }
+
+  input[type="checkbox"] {
+    left: 0;
+    position: absolute;
+
+    &:checked + ._title::before {
+      content: 'CHECKED';
+    }
+  }
+
+
+}
