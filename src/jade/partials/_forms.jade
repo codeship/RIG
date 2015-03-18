@@ -11,8 +11,15 @@ form.form
           input#name(type="text", name="name")
       .col.m75.l50
         label.label(for="email")
-          span._title Please enter your name
+          span._title Please enter your Email Address
           input#email(type="email", name="email")
+      .col.m75.l50
+        label.label(for="country")
+          span._title Please enter your Email Address
+          select(name="country")
+            option(value="Austria") Austria
+            option(value="Narnia") Narnia
+            option(value="MiddleEarth") Middle Earth
       .col.m75.l50
         label.label(for="body")
           textarea(name="body")
