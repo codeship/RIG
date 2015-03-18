@@ -10,7 +10,7 @@ var config      = require('../config');
 
 gulp.task('jade', function() {
   return gulp.src(config.jade.src)
-    // .pipe(plumber())
+    .pipe(plumber())
     .pipe(filter(function (file) {
       return !/\/_/.test(file.path);
     }))
