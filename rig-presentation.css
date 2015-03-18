@@ -1,0 +1,7 @@
+.grid-presentation .col {
+  background: #bada55;
+  padding: 0;
+  border-left: 15px solid rgba(0, 0, 0, 0.1);
+  border-right: 15px solid rgba(0, 0, 0, 0.1); }
+  .grid-presentation .col.-cling {
+    border: 0; }

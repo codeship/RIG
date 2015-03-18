@@ -1,0 +1,14 @@
+@import 'variables';
+
+.grid-presentation {
+  .col {
+    background: #bada55;
+    padding: 0;
+    border-left: $base-col-padding solid rgba(#000, .1);
+    border-right: $base-col-padding solid rgba(#000, .1);
+
+    &.-cling {
+      border: 0;
+    }
+  }
+}
