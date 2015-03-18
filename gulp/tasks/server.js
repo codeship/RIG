@@ -1,4 +1,5 @@
 var gulp        = require('gulp');
+var watch       = require('gulp-watch');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var config      = require('../config');
@@ -13,8 +14,12 @@ gulp.task('serve',['jade','sass'], function() {
     server: config.paths.base
   });
 
-  gulp.watch(config.sass.src, ['sass']);
-  gulp.watch(config.jade.src, ['jade']);
+  watch(config.sass.src, function(){
+    gulp.start('sass');
+  });
+  watch(config.jade.src, function(){
+    gulp.start('jade');
+  });
 
 });
 
