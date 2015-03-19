@@ -19,6 +19,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-sass": "latest",
     "gulp-scss-lint": "latest",
+    "gulp-uglify": "^1.1.0",
     "gulp-watch": "^4.2.0",
     "require-dir": "latest"
   },
