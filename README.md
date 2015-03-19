@@ -20,4 +20,4 @@ Once everything is installed, go ahead and run gulp from the command line.
 $ gulp build
 ```
 
-This will build all sass files and output a new file called `rig-build.css`
+This will build all sass files and output a new file called `rig-latest.css`

@@ -15,7 +15,7 @@ gulp.task('build', ['scss-lint'], function() {
     .pipe(autoprefixer(
       config.sass.autoprefixer
     ))
-    .pipe(rename('rig-build.css'))
+    .pipe(rename('rig-latest.css'))
     .pipe(gulp.dest(config.sass.dest));
 
 });
