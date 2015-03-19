@@ -30,6 +30,15 @@ module.exports = {
     }
   },
 
+  coffee: {
+    watch: './src/coffee/**/*.coffee',
+    src: './src/coffee/rig.coffee',
+    dest: './',
+    compile: {
+      bare: true
+    }
+  },
+
   jade: {
     src: './src/jade/**/*.jade',
     dest: './',
