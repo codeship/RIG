@@ -13,6 +13,9 @@ gulp.task('sass', ['scss-lint'], function() {
   return gulp.src(config.sass.src)
     .pipe(plumber())
     .pipe(sass())
+    .on('error', function (err) {
+      console.log(err);
+    })
     .pipe(autoprefixer(
       config.sass.autoprefixer
     ))
