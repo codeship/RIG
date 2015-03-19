@@ -10,6 +10,7 @@
     "browser-sync": "^2.2.3",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "latest",
+    "gulp-cached": "^1.0.4",
     "gulp-filter": "^2.0.2",
     "gulp-jade": "^1.0.0",
     "gulp-plumber": "^1.0.0",

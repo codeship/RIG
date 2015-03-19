@@ -1,5 +1,6 @@
 var gulp        = require('gulp');
 var plumber     = require('gulp-plumber');
+var cache       = require('gulp-cached');
 var sass        = require('gulp-sass');
 var scsslint    = require('gulp-scss-lint');
 var autoprefixer= require('gulp-autoprefixer');
@@ -12,6 +13,7 @@ gulp.task('sass', ['scss-lint'], function() {
 
   return gulp.src(config.sass.src)
     .pipe(plumber())
+    .pipe(cache('sass'))
     .pipe(sass())
     .on('error', function (err) {
       console.log(err);
@@ -27,6 +29,7 @@ gulp.task('sass', ['scss-lint'], function() {
 gulp.task('scss-lint', function() {
   return gulp.src(config.sass.src)
     .pipe(plumber())
+    .pipe(cache('scss-lint'))
     .pipe(scsslint(
       config.sass.lint
     ));

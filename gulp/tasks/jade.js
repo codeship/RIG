@@ -1,4 +1,5 @@
 var gulp        = require('gulp');
+var cache       = require('gulp-cached');
 var jade        = require('gulp-jade');
 var plumber     = require('gulp-plumber');
 var filter      = require('gulp-filter');
@@ -11,6 +12,7 @@ var config      = require('../config');
 gulp.task('jade', function() {
   return gulp.src(config.jade.src)
     .pipe(plumber())
+    .pipe(cache('jade'))
     .pipe(filter(function (file) {
       return !/\/_/.test(file.path);
     }))
