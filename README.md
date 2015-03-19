@@ -2,6 +2,8 @@ RIG
 ===
 An aesthetically unopinionated CSS Framework by Codeship
 
+![Codeship BuildStatus](https://codeship.com/projects/a62fd230-b042-0132-a853-0e5ba92aabbb/status?branch=master)
+
 ## Building
 
 If you want to build the `rig.css` file on your own with your preferences, you can do so easily as this version of rig now supports gulp.
