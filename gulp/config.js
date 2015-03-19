@@ -17,8 +17,10 @@ module.exports = {
   sass: {
     watch: './src/scss/**/*.scss',
     src: './src/scss/**/*.scss',
-    dest: './',
-    style: 'compact',
+    dest: './assets/css/',
+    compile: {
+      outputStyle: 'nested'
+    },
 
     autoprefixer: {
       browsers: ['last 4 versions'],
@@ -34,7 +36,7 @@ module.exports = {
   coffee: {
     watch: './src/coffee/**/*.coffee',
     src: './src/coffee/rig.coffee',
-    dest: './',
+    dest: './assets/js/',
     compile: {
       bare: true
     }

@@ -8,7 +8,7 @@ var rename      = require('gulp-rename');
 var config      = require('../config');
 
 gulp.task('build', ['build-scss','build-coffee'], function() {
-  return console.log('RIG Files have been buildt correctly. Yay.');
+  return console.log('RIG files have been built correctly. Yay.');
 });
 
 gulp.task('build-scss', ['scss-lint'], function() {
