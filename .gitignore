@@ -1,2 +1,6 @@
 *.scssc
 node_modules/
+
+rig-latest.css
+
+rig-latest.js
