@@ -5,14 +5,14 @@
 // So you can add all the available options of those plugins
 // This is true for:
 
+// By running gulp task
+// it will spawn a running server and using the dev paths for that
+
 // autoprefixer | https://www.npmjs.com/package/gulp-autoprefixer
 // lint | https://www.npmjs.com/package/gulp-scss-lint
 
-module.exports = {
 
-  paths: {
-    base: './'
-  },
+module.exports = {
 
   sass: {
     watch: './src/scss/**/*.scss',
@@ -47,6 +47,12 @@ module.exports = {
     compile: {
       pretty: true
     }
+  },
+
+  paths: {
+    dev: './dev/',
+    deploy: './deploy/',
+    build: './build/'
   }
 
 }

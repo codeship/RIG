@@ -18,7 +18,7 @@ gulp.task('sass', ['scss-lint'], function() {
     .pipe(autoprefixer(
       config.sass.autoprefixer
     ))
-    .pipe(gulp.dest(config.sass.dest))
+    .pipe(gulp.dest(config.paths.dev + config.sass.dest))
     .pipe(reload({stream: true}));
 
 });

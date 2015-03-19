@@ -17,6 +17,6 @@ gulp.task('jade', function() {
       return !/\/_/.test(file.path);
     }))
     .pipe(jade(config.jade.compile))
-    .pipe(gulp.dest(config.jade.dest))
+    .pipe(gulp.dest(config.paths.dev + config.jade.dest))
     .pipe(reload({stream: true}));
 });

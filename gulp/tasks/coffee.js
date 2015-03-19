@@ -15,7 +15,7 @@ gulp.task('coffee', function() {
     .pipe(cache('coffee'))
     .pipe(include())
     .pipe(coffee(config.coffee.compiler))
-    .pipe(gulp.dest(config.coffee.dest))
+    .pipe(gulp.dest(config.paths.dev + config.coffee.dest))
     .pipe(reload({stream: true}));
 
 });

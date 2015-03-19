@@ -11,7 +11,7 @@ var config      = require('../config');
 gulp.task('serve',['jade', 'sass', 'coffee'], function() {
 
   browserSync({
-    server: config.paths.base
+    server: config.paths.dev
   });
 
   watch(config.sass.watch, function(){

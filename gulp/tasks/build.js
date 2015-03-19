@@ -22,7 +22,7 @@ gulp.task('build-scss', ['scss-lint'], function() {
       config.sass.autoprefixer
     ))
     .pipe(rename('rig-latest.css'))
-    .pipe(gulp.dest(config.sass.dest));
+    .pipe(gulp.dest(config.paths.build + config.sass.dest));
 
 });
 
@@ -35,7 +35,7 @@ gulp.task('build-coffee', ['scss-lint'], function() {
       console.log(err);
     })
     .pipe(rename('rig-latest.js'))
-    .pipe(gulp.dest(config.coffee.dest))
+    .pipe(gulp.dest(config.paths.build + config.coffee.dest))
 
 });
 
