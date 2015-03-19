@@ -542,3 +542,47 @@ select {
   background-size: 15px;
   background-repeat: no-repeat;
   background-position: right 7.5px center; }
+
+.menuToggleButton {
+  position: fixed;
+  top: 15px; }
+  .menuToggleButton.-left {
+    left: 15px; }
+  .menuToggleButton.-right {
+    right: 15px; }
+  @media screen and (min-width: 900px) {
+    .menuToggleButton {
+      display: none; } }
+
+.menu {
+  display: inline-block;
+  position: fixed;
+  width: 100%;
+  max-width: 300px;
+  background: #fff;
+  top: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+  @media screen and (max-width: 900px) {
+    .menu {
+      -webkit-transition: -webkit-transform 300ms;
+      transition: transform 300ms; }
+      .menu.-left {
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        transform: translateX(-100%); }
+      .menu.-right {
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%); }
+      .menu.is-open {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0); } }
+  .menu.-left {
+    left: 0;
+    border-right: 1px solid #ccc; }
+  .menu.-right {
+    right: 0;
+    border-left: 1px solid #ccc; }
