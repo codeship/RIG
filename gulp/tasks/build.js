@@ -5,7 +5,7 @@ var rename      = require('gulp-rename');
 
 var config      = require('../config');
 
-gulp.task('build', function() {
+gulp.task('build', ['scss-lint'], function() {
 
   return gulp.src(config.sass.src)
     .pipe(sass())
