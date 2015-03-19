@@ -15,6 +15,7 @@ module.exports = {
   },
 
   sass: {
+    watch: './src/scss/**/*.scss',
     src: './src/scss/**/*.scss',
     dest: './',
     style: 'compact',
@@ -40,9 +41,12 @@ module.exports = {
   },
 
   jade: {
+    watch: './src/jade/**/*.jade',
     src: './src/jade/**/*.jade',
     dest: './',
-    pretty: true
+    compile: {
+      pretty: true
+    }
   }
 
 }
