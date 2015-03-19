@@ -1,0 +1,57 @@
+.menuToggleButton {
+  position: fixed;
+  top: $base-padding;
+
+  &.-left {
+    left: $base-padding;
+  }
+
+  &.-right {
+    right: $base-padding;
+  }
+
+  @include larger-than('medium-screen') {
+    display: none;
+  }
+
+}
+
+.menu {
+  display: inline-block;
+  position: fixed;
+  width: 100%;
+  max-width: 300px;
+  background: color('menu', 'bg');
+  top: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  @include smaller-than('medium-screen') {
+    transition: transform 300ms;
+
+    &.-left {
+      transform: translateX(-100%);
+    }
+
+    &.-right {
+      transform: translateX(100%);
+    }
+
+
+    &.is-open {
+      transform: translateX(0);
+    }
+  }
+
+
+  &.-left {
+    left: 0;
+    border-right: 1px solid color('menu', 'border');
+  }
+
+  &.-right {
+    right: 0;
+    border-left: 1px solid color('menu', 'border');
+  }
+}
