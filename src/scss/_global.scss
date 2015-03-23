@@ -134,7 +134,34 @@ pre {
   padding: $base-padding;
 }
 
+// Helper Classes for typography
+.ta-left {
+  text-align: left;
+}
 
+.ta-right {
+  text-align: right;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-underline {
+  @include sexy-underline(color('body'));
+}
+
+.text-slash {
+  @include sexy-underline(color('body'), 50%);
+}
 
 
 
