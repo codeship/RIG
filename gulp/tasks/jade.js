@@ -12,7 +12,7 @@ var config      = require('../config');
 gulp.task('jade', function() {
   return gulp.src(config.jade.src)
     .pipe(plumber())
-    .pipe(cache('jade'))
+    // .pipe(cache('jade'))
     .pipe(filter(function (file) {
       return !/\/_/.test(file.path);
     }))
