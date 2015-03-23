@@ -1,4 +1,7 @@
 class Rig.Menu
 
   constructor: ->
-    console.log 'menu initiated'
+    # Oh,.... we removed the toggle script :D
+
+    $('.menuToggleButton').on 'click', (e) ->
+      $('.menu').toggleClass 'is-open'
