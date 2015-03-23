@@ -1,4 +1,21 @@
 @import 'variables';
+@import 'mixins';
+@import 'functions';
+
+.container {
+  padding: $base-padding;
+}
+
+.example {
+  color: rgba(#000,.5);
+}
+
+.section-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: .5em 0;
+  border-bottom: 1px solid color('body');
+}
 
 .grid-presentation {
   .col {
@@ -6,6 +23,9 @@
     padding: 0;
     border-left: $base-col-padding solid rgba(#000, .1);
     border-right: $base-col-padding solid rgba(#000, .1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &.-cling {
       border: 0;
