@@ -13,7 +13,7 @@ gulp.task('sass', ['scss-lint'], function() {
 
   return gulp.src(config.sass.src)
     .pipe(plumber())
-    .pipe(cache('sass'))
+    // .pipe(cache('sass'))
     .pipe(sass(config.sass.compile))
     .pipe(autoprefixer(
       config.sass.autoprefixer
@@ -26,7 +26,7 @@ gulp.task('sass', ['scss-lint'], function() {
 gulp.task('scss-lint', function() {
   return gulp.src(config.sass.src)
     .pipe(plumber())
-    .pipe(cache('scss-lint'))
+    // .pipe(cache('scss-lint'))
     .pipe(scsslint(
       config.sass.lint
     ));

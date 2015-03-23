@@ -12,7 +12,7 @@ gulp.task('coffee', function() {
 
   return gulp.src(config.coffee.src)
     .pipe(plumber())
-    .pipe(cache('coffee'))
+    // .pipe(cache('coffee'))
     .pipe(include())
     .pipe(coffee(config.coffee.compiler))
     .pipe(gulp.dest(config.paths.dev + config.coffee.dest))
