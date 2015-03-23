@@ -20,7 +20,7 @@
   display: inline-block;
   position: fixed;
   width: 100%;
-  max-width: 300px;
+  max-width: $e-menu;
   background: color('menu', 'bg');
   top: 0;
   height: 100vh;
@@ -54,4 +54,65 @@
     right: 0;
     border-left: 1px solid color('menu', 'border');
   }
+
+  &[data-rig-menu="horizontal"] {
+    @include larger-than('medium-screen') {
+      display: block;
+      position: inherit;
+      max-width: 100%;
+      border: 0;
+      border-bottom: 1px solid color('menu', 'border');
+      height: auto;
+    }
+  }
+}
+
+// If the menu is not a horizontal one,
+// add paddings to the container
+.menu:not([data-rig-menu="horizontal"]) {
+
+  @at-root {
+
+    @include larger-than('medium-screen') {
+      &.-left ~ .container {
+        padding-left: $e-menu;
+      }
+
+      &.-right ~ .container {
+        padding-right: $e-menu;
+      }
+    }
+
+    @include larger-than('large-screen', 300px) {
+      &.-left ~ .container {
+        padding-left: $e-menu/2;
+      }
+
+      &.-right ~ .container {
+        padding-right: $e-menu/2;
+      }
+    }
+
+    @include larger-than('large-screen', 400px) {
+      &.-left ~ .container {
+        padding-left: $e-menu/3;
+      }
+
+      &.-right ~ .container {
+        padding-right: $e-menu/3;
+      }
+    }
+
+    @include larger-than('large-screen', 600px) {
+      &.-left ~ .container {
+        padding-left: 0;
+      }
+
+      &.-right ~ .container {
+        padding-right: 0;
+      }
+    }
+
+  } // End of at-root
+
 }
