@@ -9,20 +9,20 @@
 
 @mixin appearance($value) {
   appearance: #{$value};
-  -moz-appearance: #{$value}; /* Firefox */
-  -webkit-appearance: #{$value}; /* Safari and Chrome */
+  -moz-appearance: #{$value}; // Firefox
+  -webkit-appearance: #{$value}; // Safari Webkit
 }
 
-@mixin smaller-than($breakpoint-name) {
+@mixin smaller-than($breakpoint-name, $removeValue: 0) {
   $width: map-get($m-breakpoints, $breakpoint-name);
-  @media screen and (max-width: $width) {
+  @media screen and (max-width: #{$width - $removeValue}) {
     @content;
   }
 }
 
-@mixin larger-than($breakpoint-name) {
+@mixin larger-than($breakpoint-name, $addValue: 0) {
   $width: map-get($m-breakpoints, $breakpoint-name);
-  @media screen and (min-width: $width) {
+  @media screen and (min-width: #{$width + $addValue}) {
     @content;
   }
 }
