@@ -16,6 +16,10 @@
   width: 100%;
   max-width: $bp-l;
   text-align: left;
+
+  &.-full {
+    max-width: 100%;
+  }
 }
 
 .grid {
