@@ -26,6 +26,7 @@
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
+  text-align: left;
 
   @include smaller-than('medium-screen') {
     transition: transform 300ms;
@@ -55,7 +56,7 @@
     border-left: 1px solid color('menu', 'border');
   }
 
-  &[data-rig-menu="horizontal"] {
+  &[data-rig-ui-menu="horizontal"] {
     @include larger-than('medium-screen') {
       display: block;
       position: inherit;
@@ -63,6 +64,7 @@
       border: 0;
       border-bottom: 1px solid color('menu', 'border');
       height: auto;
+      padding: $base-padding;
     }
   }
 }
@@ -116,3 +118,5 @@
   } // End of at-root
 
 }
+
+@import 'nav';

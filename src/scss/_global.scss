@@ -14,6 +14,7 @@ html {
 
 body {
   padding: 0;
+  margin: 0;
   font-family: $f-body;
   color: color('body');
   text-align: center;
@@ -34,11 +35,17 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 .like-h1,
 .like-h2,
 .like-h3,
-.like-h4 {
+.like-h4,
+.like-h5,
+.like-h6 {
   font-family: $f-heading;
+  margin: 0;
+  line-height: 2em;
 }
 
 h1,
@@ -62,12 +69,30 @@ h4,
   font-size: 1.4rem;
 }
 
+h5,
+.like-h5 {
+  font-size: 1.2rem;
+}
+
+h6,
+.like-h6 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+
+
 p {
   font-size: 1rem;
   line-height: 1.4em;
 
   @include smaller-than('small-screen') {
     line-height: 1.2em;
+  }
+
+  a {
+    margin-left:  .3em;
+    margin-right: .3em;
   }
 }
 
@@ -92,6 +117,22 @@ a {
   }
 }
 
+code,
+pre {
+  font-family: $f-code;
+  border-radius: $base-border-radius;
+  color: color('code');
+  background: color('code', 'bg');
+}
+
+code {
+  padding: .1em .4em;
+}
+
+pre {
+  display: block;
+  padding: $base-padding;
+}
 
 
 

@@ -19,6 +19,7 @@ $e-menu: 300px;
 
 $f-heading: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 $f-body: Tahoma, Verdana, Segoe, sans-serif;
+$f-code: monaco, Consolas, 'Lucida Console', monospace;
 
 // ************************************
 //
@@ -147,6 +148,10 @@ $m-colors: (
     base: #242628,
     bg: #fff,
     border: #ccc
+  ),
+  'code': (
+    base: #242628,
+    bg: #eaeaea
   )
 );
 
