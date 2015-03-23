@@ -6,17 +6,9 @@ html(lang="en")
     link(rel="stylesheet", href="/assets/css/rig.css")
     link(rel="stylesheet", href="/assets/css/rig-presentation.css")
 
-  body.has-menu
-    button.menuToggleButton.-right Menu
-    .menu.-left(data-rig-menu="horizontal")
-      nav.nav
-        ul
-          li: a(href="#") Menu Item 1
-          li: a(href="#") Menu Item 2
-          li: a(href="#") Menu Item 3
-          li: a(href="#") Menu Item 4
-          li: a(href="#") Menu Item 5
-          li: a(href="#") Menu Item 6
+  body
+
+    include ./partials/_menu.jade
 
     .container
       h1 RIG 2.0

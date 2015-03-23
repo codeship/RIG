@@ -1,10 +1,10 @@
-h1 GridSysytem
+h1.section-title GridSystem
 
 p This Grid is Percentage based. From 5 - 100%. It is seperated by 5% steps to make calculations easy and intuitive. If you want to use columns divided by 3 you can use 33% and 66%.
 
 p columns are hosted in rows and are fully responsive if you want them to.
 
-h4 Example:
+p.example Example:
 
 .grid.grid-presentation
   .row
@@ -19,8 +19,11 @@ h4 Example:
     .col.s50.m25.l20
       p .col.s50.m25.l20
 
-h4 Example:
-p Nesting Grids in each other
+p.example Example:
+p.
+  You can also nest grids in each other. Be sure to use <code>.row</code> Elements for generating a clean and semantic structure.
+  Also you can use the <code>-cling</code> class on elements if you don't want to have a padding on those columns
+
 
 .grid.grid-presentation
   .row
@@ -38,7 +41,7 @@ p Nesting Grids in each other
             .col.s33.-cling
               p .col.s33
 
-h4 Example:
+p.example Example:
 p Using Tail and Offset for handling spaces between you columns
 
 .grid.grid-presentation
