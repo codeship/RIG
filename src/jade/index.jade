@@ -6,9 +6,9 @@ html(lang="en")
     link(rel="stylesheet", href="/assets/css/rig.css")
     link(rel="stylesheet", href="/assets/css/rig-presentation.css")
 
-  body
-    button.menuToggleButton.-left Menu
-    aside.menu.-right
+  body.has-menu
+    button.menuToggleButton.-right Menu
+    .menu.-left(data-rig-menu="horizontal")
       nav.nav
         ul
           li: a(href="#") Menu Item 1
