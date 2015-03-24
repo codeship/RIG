@@ -1,0 +1,38 @@
+// Menu Toggle Button is only visible till menu is always there
+.menuToggleButton {
+  position: fixed;
+  top: $base-padding;
+
+  &.-left {
+    left: $base-padding;
+  }
+
+  &.-right {
+    right: $base-padding;
+  }
+
+  @include larger-than('medium-screen') {
+    display: none;
+  }
+}
+
+.menu {
+
+  // Have an Offcanvas Menu on small screens
+  @include smaller-than('medium-screen') {
+    transition: transform 300ms;
+
+    &.-left {
+      transform: translateX(-100%);
+    }
+
+    &.-right {
+      transform: translateX(100%);
+    }
+
+    &.is-open {
+      transform: translateX(0);
+    }
+
+  }
+}
