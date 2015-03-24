@@ -132,6 +132,7 @@ code {
 pre {
   display: block;
   padding: $base-padding;
+  overflow-wrap: break-word;
 }
 
 // Helper Classes for typography
