@@ -38,12 +38,6 @@
     }
   }
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
   a {
     display: block;
     background-image: none;
@@ -106,7 +100,7 @@
   position: relative;
 
   > a {
-    padding: round($base-padding/4) $base-padding;
+    padding: round($base-padding/4) 0;
   }
 }
 
