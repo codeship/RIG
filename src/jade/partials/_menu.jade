@@ -1,3 +1,8 @@
+//- All the Markup for our menu.
+//- It automatically jumps from vertical to horizontal. No copy paste of menu entries
+
+//- Example menu left offcanvas and horizontal
+
 button.menuToggleButton.-right Menu
 .menu.-left(data-rig-ui-menu="horizontal")
   nav.nav
@@ -13,3 +18,22 @@ button.menuToggleButton.-right Menu
 
     ._block.-right
       a(href="/") contact
+
+
+//- Example Menu right offcanvas and vertical
+
+//- button.menuToggleButton.-left Menu
+//- .menu.-right
+//-   nav.nav
+//-     ._block.-left.-logo
+//-       a(href="/"): h1 RIG
+//-     ul._block
+//-       li._item(data-ui-component="dropdown")
+//-         a(href="javascript:void(0)", data-dropdown-element="toggle") sections
+//-         ul(data-dropdown-element="dropdown")
+//-           li: a(href="#typography") Typography
+//-           li: a(href="#forms") Forms
+//-           li: a(href="#grid") Grid
+
+//-     ._block.-right
+//-       a(href="/") contact
