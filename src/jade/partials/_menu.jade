@@ -3,20 +3,20 @@
 
 //- Example menu left offcanvas and horizontal
 
-button.menuToggleButton.-right Menu
-.menu.-left(data-rig-ui-menu="horizontal")
-  nav.nav
-    ._block.-left.-logo
+button.flexmenuToggleButton.-right Menu
+.flexmenu.-left(data-rig-ui-menu="horizontal")
+  nav.flexmenu_nav
+    .flexmenu_block.-left.-logo
       a(href="/"): h1 RIG
-    ul._block
-      li._item(data-ui-component="dropdown")
+    ul.flexmenu_block
+      li.flexmenu_block_item(data-ui-component="dropdown")
         a(href="javascript:void(0)", data-dropdown-element="toggle") sections
         ul(data-dropdown-element="dropdown")
           li: a(href="#typography") Typography
           li: a(href="#forms") Forms
           li: a(href="#grid") Grid
 
-    ._block.-right
+    .flexmenu_block.-right
       a(href="/") contact
 
 
