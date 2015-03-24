@@ -15,7 +15,7 @@ $base-font-size: 16px;
 //
 // ************************************
 
-$e-menu: 300px;
+$e-flexmenu: 300px;
 
 $f-heading: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 $f-body: Tahoma, Verdana, Segoe, sans-serif;
@@ -31,7 +31,7 @@ $_grid-sizes: 5, 10, 15, 20, 25, 30, 33, 35, 40, 45, 50, 55, 60, 65, 66, 70, 75,
 
 // Change with caution as this effects
 // elements/grid/_grid-mixins.scss
-$_grid-ranges: 's', 'm', 'l';
+// $_grid-ranges: 's', 'm', 'l';
 
 // BREAKPOINTS
 $bp-xs: 400px;
@@ -40,10 +40,10 @@ $bp-m: 900px;
 $bp-l: 1100px;
 
 $m-breakpoints: (
-  supersmall-screen: 400px,
-  small-screen: 600px,
-  medium-screen: 900px,
-  large-screen: 1100px
+  supersmall-screen: $bp-xs,
+  small-screen: $bp-s,
+  medium-screen: $bp-m,
+  large-screen: $bp-l
 );
 
 // ************************************

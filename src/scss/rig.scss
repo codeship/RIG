@@ -2,6 +2,8 @@
 @import 'mixins';
 @import 'functions';
 @import 'global';
-@import 'elements/grid/index';
-@import 'elements/forms/index';
-@import 'elements/menu/index';
+
+@import 'elements/flexmenu';
+@import 'elements/dropdown';
+@import 'elements/grid';
+@import 'elements/inputs';

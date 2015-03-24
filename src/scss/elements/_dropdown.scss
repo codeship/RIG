@@ -1,0 +1,86 @@
+[data-dropdown-element="dropdown"] {
+  display: none;
+  padding-left: $base-padding/2;
+  text-align: left;
+  z-index: z-index('dropdown');
+}
+
+[data-dropdown-element="toggle"] {
+  position: relative;
+
+  &::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+  }
+
+  &.is-open {
+
+    &::after {
+      content: '-';
+    }
+
+    ~ [data-dropdown-element="dropdown"] {
+      pointer-events: auto;
+      display: block;
+      max-height: 50vh;
+    }
+
+  }
+}
+
+// Make the Dropdown work on horizontal menu
+@include larger-than('medium-screen') {
+
+  [data-rig-ui-menu="horizontal"] {
+
+    [data-dropdown-element="dropdown"] {
+      position: absolute;
+      display: block;
+      top: 100%;
+      left: 50%;
+      transform-origin: 50% 0;
+      transition: transform 300ms cubic-bezier(.34, 1.61, .7, 1), opacity 300ms;
+      transform: translate(-50%, 10px) scale3d(0, 0, 0);
+      background: color('body', 'bg');
+      border-radius: $base-border-radius;
+      border: 1px solid color('menu', 'border');
+      opacity: 0;
+      padding: $base-padding/2;
+
+      &::before,
+      &::after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        border: 10px solid transparent;
+        border-bottom-color: color('menu', 'border');
+        transform: translate(-50%, -100%);
+      }
+
+      &::after {
+        top: 2px;
+        border-bottom-color: color('body', 'bg');
+      }
+
+    }
+
+    [data-dropdown-element="toggle"] {
+      // Remove dropdown indicator
+      &::after {
+        content: none;
+      }
+
+      &.is-open {
+        ~ [data-dropdown-element="dropdown"] {
+          display: block;
+          opacity: 1;
+          transform: translate(-50%, 10px) scale3d(1, 1, 1);
+        }
+      }
+    }
+
+  }
+
+}

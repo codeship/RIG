@@ -13,11 +13,15 @@ html {
 }
 
 body {
-  padding: 0;
   margin: 0;
-  font-family: $f-body;
+  padding: 0;
   color: color('body');
+  font-family: $f-body;
   text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 div,
@@ -91,7 +95,7 @@ p {
   }
 
   a {
-    margin-left:  .3em;
+    margin-left: .3em;
     margin-right: .3em;
   }
 }
@@ -163,22 +167,3 @@ pre {
 .text-slash {
   @include sexy-underline(color('body'), 50%);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

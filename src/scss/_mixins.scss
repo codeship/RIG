@@ -1,16 +1,16 @@
 // Mixins for RIG
 
 @mixin sexy-underline($color, $percent: 90%) {
-  background-image: linear-gradient(to bottom, #fff 75%, $color 75%);
-  background-size: 2px 2px;
+  background-image: linear-gradient(to bottom, #fff 70%, $color 75%);
+  background-size: 2px 4px;
   background-position: 0 $percent;
   background-repeat: repeat-x;
 }
 
 @mixin appearance($value) {
-  appearance: #{$value};
-  -moz-appearance: #{$value}; // Firefox
   -webkit-appearance: #{$value}; // Safari Webkit
+  -moz-appearance: #{$value}; // Firefox
+  appearance: #{$value};
 }
 
 @mixin smaller-than($breakpoint-name, $removeValue: 0) {

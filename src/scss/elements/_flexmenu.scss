@@ -1,0 +1,205 @@
+.flexmenu {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: $e-flexmenu;
+  background: color('menu', 'bg');
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-align: left;
+
+  // Menu Can be attached left or right
+  &.-left {
+    left: 0;
+    border-right: 1px solid color('menu', 'border');
+  }
+
+  &.-right {
+    right: 0;
+    border-left: 1px solid color('menu', 'border');
+  }
+
+  // Have an Offcanvas Menu on small screens
+  @include smaller-than('medium-screen') {
+    transition: transform 300ms;
+
+    &.-left {
+      transform: translateX(-100%);
+    }
+
+    &.-right {
+      transform: translateX(100%);
+    }
+
+    &.is-open {
+      transform: translateX(0);
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: block;
+    background-image: none;
+  }
+}
+
+.flexmenu_nav {
+  display: block;
+}
+
+// There is also a Toggle Button for showing the menu when offcanvas
+.flexmenuToggleButton {
+  position: fixed;
+  top: $base-padding;
+
+  &.-left {
+    left: $base-padding;
+  }
+
+  &.-right {
+    right: $base-padding;
+  }
+
+  @include larger-than('medium-screen') {
+    display: none;
+  }
+}
+
+// The Flexmenu can have several blocks
+.flexmenu_block {
+  padding: 0 $base-padding;
+
+  a {
+    display: block;
+    padding: round($base-padding/4) 0;
+  }
+
+  // Specail Case of a logo block
+  &.-logo {
+    padding: 0;
+
+    > a {
+      transition: color 300ms, background 300ms;
+      padding: 0 $base-padding;
+      text-decoration: none;
+      background-image: none;
+      color: color('body');
+
+      &:hover {
+        color: color('anchor', 'hover');
+        background: color('box', 'bg');
+      }
+    }
+  }
+}
+
+// This makes sense if a block is a list and has multiple items
+.flexmenu_block_item {
+  display: block;
+  position: relative;
+
+  > a {
+    padding: round($base-padding/4) $base-padding;
+  }
+}
+
+// If the menu is not a horizontal one,
+// add paddings to the container
+// This is not output correctly, but worked before :(
+
+.flexmenu:not([data-rig-ui-menu="horizontal"]) {
+
+  @include larger-than('medium-screen') {
+    &.-left ~ .container {
+      padding-left: $e-flexmenu;
+    }
+
+    &.-right ~ .container {
+      padding-right: $e-flexmenu;
+    }
+  }
+
+  @include larger-than('large-screen', 300px) {
+    &.-left ~ .container {
+      padding-left: $e-flexmenu/2;
+    }
+
+    &.-right ~ .container {
+      padding-right: $e-flexmenu/2;
+    }
+  }
+
+  @include larger-than('large-screen', 400px) {
+    &.-left ~ .container {
+      padding-left: $e-flexmenu/3;
+    }
+
+    &.-right ~ .container {
+      padding-right: $e-flexmenu/3;
+    }
+  }
+
+  @include larger-than('large-screen', 600px) {
+    &.-left ~ .container {
+      padding-left: 0;
+    }
+
+    &.-right ~ .container {
+      padding-right: 0;
+    }
+  }
+
+}
+
+// Add Horizontal Menu when screen has reached the bigger size
+@include larger-than('medium-screen') {
+
+  .flexmenu[data-rig-ui-menu="horizontal"] {
+    display: block;
+    position: inherit;
+    max-width: 100%;
+    border: 0;
+    border-bottom: 1px solid color('menu', 'border');
+    height: auto;
+    overflow: visible;
+
+    .flexmenu_nav {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .flexmenu_block {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1; // Let the Box fill out the rest
+      // Align Everything centered on x and y axis
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      &.-left {
+        border-right: 1px solid color('menu', 'border');
+        flex-grow: 0;
+        margin-left: 0;
+      }
+
+      &.-right {
+        border-left: 1px solid color('menu', 'border');
+        flex-grow: 0;
+        margin-right: 0;
+      }
+    }
+
+    ul.flexmenu_block {
+      flex-flow: row wrap;
+      justify-content: flex-start;
+    }
+  }
+}

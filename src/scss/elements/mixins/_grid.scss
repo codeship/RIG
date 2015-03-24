@@ -1,0 +1,47 @@
+// Make Columns based on the available sizes and prefix with the correct class
+@mixin make-cols($class) {
+
+  // Take care of certain Edgecases like 33% to have a better result
+  @each $size in $_grid-sizes {
+
+    .col.#{$class}#{$size} {
+      @if $size == 33 {
+        width: 33.3333%;
+      } @else if $size == 66 {
+        width: 66.6666%;
+      } @else {
+        width: #{$size + "%"};
+      }
+    }
+
+    .col.#{$class + "-offset"}#{$size} {
+      @if $size != 100 {
+
+        @if $size == 33 {
+          margin-left: 33.3333%;
+        } @else if $size == 66 {
+          margin-left: 66.6666%;
+        } @else {
+          margin-left: #{$size + "%"};
+        }
+
+      }
+    }
+
+    .col.#{$class + "-tail"}#{$size} {
+      @if $size != 100 {
+
+        @if $size == 33 {
+          margin-right: 33.3333%;
+        } @else if $size == 66 {
+          margin-right: 66.6666%;
+        } @else {
+          margin-right: #{$size + "%"};
+        }
+
+      }
+    }
+
+  }
+
+}
