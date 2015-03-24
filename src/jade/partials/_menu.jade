@@ -1,15 +1,15 @@
 button.menuToggleButton.-right Menu
 .menu.-left(data-rig-ui-menu="horizontal")
   nav.nav
-    ._block.-left
+    ._block.-left.-logo
       a(href="/"): h1 RIG
     ul._block
-      li._item: a(href="#") Menu Item 1
-      li._item: a(href="#") Menu Item 2
-      li._item: a(href="#") Menu Item 3
-      li._item: a(href="#") Menu Item 4
-      li._item: a(href="#") Menu Item 5
-      li._item: a(href="#") Menu Item 6
+      li._item(data-ui-component="dropdown")
+        a(href="javascript:void(0)", data-dropdown-element="toggle") sections
+        ul(data-dropdown-element="dropdown")
+          li: a(href="#typography") Typography
+          li: a(href="#forms") Forms
+          li: a(href="#grid") Grid
 
     ._block.-right
       a(href="/") contact

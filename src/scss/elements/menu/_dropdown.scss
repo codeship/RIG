@@ -1,0 +1,35 @@
+[data-dropdown-element="toggle"] {
+  position: relative;
+
+  &::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+  }
+
+  ~ [data-dropdown-element="dropdown"] {
+    padding-left: $base-padding/2;
+    pointer-events: none;
+    transition: all 300ms;
+    transform: scale3d(1,0,1);
+    transform-origin: 50% 0;
+    max-height: 0;
+  }
+
+  &.is-open {
+
+    &::after {
+      content: "-";
+    }
+
+    ~ [data-dropdown-element="dropdown"] {
+      padding-left: $base-padding/2;
+      pointer-events: auto;
+      display: block;
+      transform: scale3d(1,1,1);
+      height: auto;
+      max-height: 50vh;
+    }
+
+  }
+}

@@ -72,7 +72,6 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        padding: 0 $base-padding;
 
         &.-left {
           border-right: 1px solid color('menu', 'border');
@@ -85,6 +84,7 @@
           flex-grow: 0;
           margin-right: 0;
         }
+
       }
 
       ul._block {

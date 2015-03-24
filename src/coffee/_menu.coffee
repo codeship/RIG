@@ -5,3 +5,6 @@ class Rig.Menu
 
     $('.menuToggleButton').on 'click', (e) ->
       $('.menu').toggleClass 'is-open'
+
+    $('[data-dropdown-element="toggle"]').on 'click', (e) ->
+      $(this).toggleClass 'is-open'
