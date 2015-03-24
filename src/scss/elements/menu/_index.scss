@@ -26,7 +26,8 @@
     padding: 0 $base-padding;
 
     a {
-      padding: round($base-padding/4) 0;
+      padding-top: round($base-padding/4);
+      padding-bottom: round($base-padding/4);
       display: block;
     }
   }
@@ -39,6 +40,10 @@
 
   ._item {
     display: block;
+
+    > a {
+      padding: round($base-padding/4) $base-padding;
+    }
   }
 
   .-logo {
