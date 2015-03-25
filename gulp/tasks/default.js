@@ -1,5 +1,11 @@
-var gulp = require('gulp');
+var gulp        = require('gulp'),
+    del         = require('del'),
+    config      = require('../config');
 
-gulp.task('default',['serve']);
+gulp.task('default',['clean','serve']);
+
+gulp.task('clean', function() {
+  del([config.paths.dev,config.paths.build,config.paths.deploy]);
+});
 
 

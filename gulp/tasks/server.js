@@ -8,20 +8,20 @@ var config      = require('../config');
 // now we have live reload for jade and sass files :)
 // One thing left we could do, split up our gulp tasks :)
 
-gulp.task('serve',['jade', 'sass', 'coffee'], function() {
+gulp.task('serve',['assets'], function() {
 
   browserSync({
     server: config.paths.dev
   });
 
   watch(config.sass.watch, function(){
-    gulp.start('sass');
+    gulp.start('assets-sass');
   });
   watch(config.jade.watch, function(){
-    gulp.start('jade');
+    gulp.start('assets-jade');
   });
   watch(config.coffee.watch, function(){
-    gulp.start('coffee');
+    gulp.start('assets-coffee');
   });
 
 });

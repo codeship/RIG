@@ -54,7 +54,8 @@ module.exports = {
   paths: {
     dev: './dev/',
     deploy: './deploy/',
-    build: './build/'
+    build: './build/',
+    vendors: './src/vendors'
   }
 
 }
