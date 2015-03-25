@@ -9,6 +9,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
   text-align: left;
+  z-index: z-index('flexmenu');
 
   // Menu Can be attached left or right
   &.-left {
