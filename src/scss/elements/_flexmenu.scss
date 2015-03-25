@@ -153,6 +153,7 @@
 }
 
 // Add Horizontal Menu when screen has reached the bigger size
+// Add Fallback for Browsers that don't support Flexbox
 @include larger-than('medium-screen') {
 
   .flexmenu[data-rig-ui-menu="horizontal"] {
@@ -165,35 +166,71 @@
     overflow: visible;
 
     .flexmenu_nav {
-      display: flex;
-      justify-content: space-between;
+      display: table;
+      width: 100%;
     }
 
     .flexmenu_block {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1; // Let the Box fill out the rest
-      // Align Everything centered on x and y axis
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      display: table-cell;
+      height: auto;
+      text-align: left;
+
+      &.-left,
+      &.-right {
+        width: 1%;
+      }
 
       &.-left {
         border-right: 1px solid color('menu', 'border');
-        flex-grow: 0;
         margin-left: 0;
       }
 
       &.-right {
         border-left: 1px solid color('menu', 'border');
-        flex-grow: 0;
         margin-right: 0;
       }
     }
 
-    ul.flexmenu_block {
-      flex-flow: row wrap;
-      justify-content: flex-start;
+    .flexmenu_block_item {
+      display: inline-block; // If no Flexbox support
     }
   }
+
+  // If the Browser supports flexbox
+  .flexbox {
+
+    .flexmenu[data-rig-ui-menu="horizontal"] {
+
+      .flexmenu_nav {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .flexmenu_block {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; // Let the Box fill out the rest
+        // Align Everything centered on x and y axis
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        &.-left,
+        &.-right {
+          width: auto;
+          flex-grow: 0;
+        }
+      }
+
+      .flexmenu_block_item {
+        display: flex;
+      }
+
+      ul.flexmenu_block {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+      }
+    }
+  }
+
 }
