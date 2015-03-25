@@ -1,7 +1,6 @@
 class Rig.Menu
 
   constructor: ->
-    # Oh,.... we removed the toggle script :D
 
     $('.flexmenuToggleButton').on 'click', (e) ->
       $('.flexmenu').toggleClass 'is-open'
