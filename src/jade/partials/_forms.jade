@@ -7,27 +7,67 @@ form.form
     .row
       .col.m75.l50
         label.label(for="name")
-          span._title Please enter your name
+          span.label_title Please enter your name
           input#name(type="text", name="name")
       .col.m75.l50
         label.label(for="email")
-          span._title Please enter your Email Address
+          span.label_title Please enter your Email Address
           input#email(type="email", name="email")
       .col.m75.l50
         label.label(for="country")
-          span._title Please enter your Email Address
+          span.label_title Please enter your Email Address
           select(name="country")
             option(value="DiscWorld") Disc World
             option(value="Narnia") Narnia
             option(value="MiddleEarth") Middle Earth
       .col.m75.l50
         label.label(for="body")
-          textarea(name="body")
+          span.label_title Leave us a Message (Autogrowing)
+          textarea(name="body", rows="10", data-rig-ui-textarea="autogrow")
       .col.m75.l50
         label.label.-checkbox
           input(type="checkbox")
-          span._title Please Check this box
+          span.label_title Please Check this box
 
         label.label.-checkbox
           input(type="checkbox")
-          span._title Another Checkbox
+          span.label_title Another Checkbox
+
+      .col.m75.l50
+        h3 Whats your favorite Coding Language ?
+        .radiogroup
+          label.label.-radio
+            input(type="radio", name="language")
+            span.label_title JavaScript
+
+          label.label.-radio
+            input(type="radio", name="language")
+            span.label_title Ruby
+
+          label.label.-radio
+            input(type="radio", name="language")
+            span.label_title PHP
+
+          label.label.-radio
+            input(type="radio", name="language")
+            span.label_title Python
+
+      .col.m75.l50
+        h3 Rate this Page
+        .radiogroup.-horizontal.row
+          label.label.-radio.col.m25
+            input(type="radio", name="rate")
+            span.label_title Not Good
+
+          label.label.-radio.col.m25
+            input(type="radio", name="rate")
+            span.label_title Good
+
+          label.label.-radio.col.m25
+            input(type="radio", name="rate")
+            span.label_title Like a Unicorn
+
+          label.label.-radio.col.m25
+            input(type="radio", name="rate")
+            span.label_title Ryan Gosling like
+

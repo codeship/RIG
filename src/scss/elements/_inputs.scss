@@ -12,6 +12,10 @@ select {
   transition: border 200ms;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+}
 
 #{$all-text-inputs-hover},
 textarea:hover,
@@ -66,25 +70,88 @@ textarea {
 
 // Checkbox
 
-.label.-checkbox {
+.label.-checkbox,
+.label.-radio {
   padding-left: 1.5em;
+  cursor: pointer;
 
   > .label_title {
     // Show an indicator if inactive
   }
 
-  input[type="checkbox"] {
+  &:hover {
+    input[type="checkbox"],
+    input[type="radio"] {
+      box-shadow: 0 0 0 2px color('anchor');
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
     margin: 0;
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
 
+    &:checked {
+      background-color: color('anchor');
+    }
+
     &:checked + .label_title::before {
       // Show an indicator if active
     }
   }
-
 }
+
+.label.-checkbox {
+  input[type="checkbox"] {
+    border-radius: 10%;
+  }
+}
+
+.label.-radio {
+  input[type="radio"] {
+    border-radius: 50%;
+  }
+}
+
+
+.radiogroup {
+  .label {
+    padding-top: $base-padding/2;
+    padding-bottom: $base-padding/2;
+  }
+
+  &.-horizontal {
+
+    .label {
+      padding: $base-padding/2 $base-padding;
+      text-align: center;
+    }
+
+    .label_title {
+      display: block;
+    }
+
+    input[type="radio"] {
+      position: relative;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
