@@ -2,38 +2,18 @@
 //- It automatically jumps from vertical to horizontal. No copy paste of menu entries
 
 //- Example menu left offcanvas and horizontal
-
-button.flexmenuToggleButton.-right Menu
-.flexmenu.-left(data-rig-ui-menu="horizontal")
-  nav.flexmenu_nav
-    .flexmenu_block.-left.-logo
+button.flexMenuToggleButton.-right(data-rig-flexmenu-element="toggle") Menu
+.flexMenu.-left(data-rig-ui-menu="horizontal", data-rig-flexmenu-element="menu")
+  nav.flexMenu_nav
+    .flexMenu_block.-left.-logo
       a(href="/"): h1 RIG
-    ul.flexmenu_block
-      li.flexmenu_block_item(data-ui-component="dropdown")
+    ul.flexMenu_block
+      li.flexMenu_block_item(data-ui-component="dropdown")
         a(href="javascript:void(0)", data-dropdown-element="toggle") sections
-        ul(data-dropdown-element="dropdown")
+        ul(data-dropdown-element="dropdown", data-rig-ui-dropdown="circle")
           li: a(href="#typography") Typography
           li: a(href="#forms") Forms
           li: a(href="#grid") Grid
 
-    .flexmenu_block.-right
+    .flexMenu_block.-right
       a(href="/") contact
-
-
-//- Example Menu right offcanvas and vertical
-
-//- button.menuToggleButton.-left Menu
-//- .menu.-right
-//-   nav.nav
-//-     ._block.-left.-logo
-//-       a(href="/"): h1 RIG
-//-     ul._block
-//-       li._item(data-ui-component="dropdown")
-//-         a(href="javascript:void(0)", data-dropdown-element="toggle") sections
-//-         ul(data-dropdown-element="dropdown")
-//-           li: a(href="#typography") Typography
-//-           li: a(href="#forms") Forms
-//-           li: a(href="#grid") Grid
-
-//-     ._block.-right
-//-       a(href="/") contact

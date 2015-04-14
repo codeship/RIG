@@ -1,4 +1,4 @@
-.flexmenu {
+.flexMenu {
   display: inline-block;
   position: fixed;
   top: 0;
@@ -45,12 +45,12 @@
   }
 }
 
-.flexmenu_nav {
+.flexMenu_nav {
   display: block;
 }
 
 // There is also a Toggle Button for showing the menu when offcanvas
-.flexmenuToggleButton {
+.flexMenuToggleButton {
   position: fixed;
   top: $base-padding;
 
@@ -68,7 +68,7 @@
 }
 
 // The Flexmenu can have several blocks
-.flexmenu_block {
+.flexMenu_block {
   padding: 0 $base-padding;
 
   a {
@@ -96,7 +96,7 @@
 }
 
 // This makes sense if a block is a list and has multiple items
-.flexmenu_block_item {
+.flexMenu_block_item {
   display: block;
   position: relative;
 
@@ -109,7 +109,7 @@
 // add paddings to the container
 // This is not output correctly, but worked before :(
 
-.flexmenu:not([data-rig-ui-menu="horizontal"]) {
+.flexMenu:not([data-rig-ui-menu=horizontal]) {
 
   @include larger-than('medium-screen') {
     &.-left ~ .container {
@@ -157,7 +157,7 @@
 // Add Fallback for Browsers that don't support Flexbox
 @include larger-than('medium-screen') {
 
-  .flexmenu[data-rig-ui-menu="horizontal"] {
+  .flexMenu[data-rig-ui-menu=horizontal] {
     display: block;
     max-width: 100%;
     border: 0;
@@ -165,12 +165,12 @@
     height: auto;
     overflow: visible;
 
-    .flexmenu_nav {
+    .flexMenu_nav {
       display: table;
       width: 100%;
     }
 
-    .flexmenu_block {
+    .flexMenu_block {
       display: table-cell;
       height: auto;
       text-align: left;
@@ -191,22 +191,23 @@
       }
     }
 
-    .flexmenu_block_item {
+    .flexMenu_block_item {
       display: inline-block; // If no Flexbox support
     }
   }
 
   // If the Browser supports flexbox
+  // Classname is without camelcase as its a valid css attribute
   .flexbox {
 
-    .flexmenu[data-rig-ui-menu="horizontal"] {
+    .flexMenu[data-rig-ui-menu=horizontal] {
 
-      .flexmenu_nav {
+      .flexMenu_nav {
         display: flex;
         justify-content: space-between;
       }
 
-      .flexmenu_block {
+      .flexMenu_block {
         display: flex;
         flex-direction: column;
         flex-grow: 1; // Let the Box fill out the rest
@@ -222,11 +223,11 @@
         }
       }
 
-      .flexmenu_block_item {
+      .flexMenu_block_item {
         display: flex;
       }
 
-      ul.flexmenu_block {
+      ul.flexMenu_block {
         flex-flow: row wrap;
         justify-content: flex-start;
       }
