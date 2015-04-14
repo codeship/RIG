@@ -49,6 +49,9 @@
   }
 }
 
+// Possibility for super small screens if one needs it
+@include make-cols('xs');
+
 @include larger-than('small-screen') {
   @include make-cols('s');
 }
