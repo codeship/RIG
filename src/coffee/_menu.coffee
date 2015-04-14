@@ -7,10 +7,10 @@ class Rig.Menu
 
 
   toggleFlexMenu: ->
-    $('.flexmenuToggleButton').on 'click', (e) ->
-      $('.flexmenu').toggleClass 'is-open'
+    $('[data-rig-flexmenu-element=toggle]').on 'click', (e) ->
+      $('[data-rig-flexmenu-element=menu]').toggleClass 'is-open'
 
   handleDropdowns: ->
-    $('[data-dropdown-element="toggle"]').on 'click', (e) ->
+    $('[data-dropdown-element=toggle]').on 'click', (e) ->
       $(this).toggleClass 'is-open'
 
