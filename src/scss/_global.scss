@@ -145,6 +145,11 @@ pre {
   overflow-wrap: break-word;
 }
 
+a,
+button {
+  cursor: pointer;
+}
+
 // Helper Classes for typography
 .ta-left {
   text-align: left;

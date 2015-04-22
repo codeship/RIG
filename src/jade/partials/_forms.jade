@@ -24,17 +24,15 @@ form.form
         label.label(for="body")
           span.label_title Leave us a Message (Autogrowing)
           textarea(name="body", rows="10", data-rig-ui-textarea="autogrow")
-      .col.m75.l50
+    .row
+      .col
+        h3 Checkbox and Radio Button Interactions
+      .col.m50
         label.label.-checkbox
           input(type="checkbox")
-          span.label_title Please Check this box
+          span.label_title Checkbox Example
 
-        label.label.-checkbox
-          input(type="checkbox")
-          span.label_title Another Checkbox
-
-      .col.m75.l50
-        h3 Whats your favorite Coding Language ?
+      .col.m50
         .radiogroup
           label.label.-radio
             input(type="radio", name="language")
@@ -53,20 +51,106 @@ form.form
             span.label_title Python
 
       .col
-        h3 Rate this Page
+        h3 How would you rate this framework ?
         .radiogroup.-horizontal.row
-          label.label.-radio.col.xs50.s25
-            input(type="radio", name="rate")
+          label.label.-radio.col.xs50.s20(for="rate-notgood")
+            input(type="radio", name="rate", id="rate-notgood")
             span.label_title Not Good
 
-          label.label.-radio.col.xs50.s25
-            input(type="radio", name="rate")
+          label.label.-radio.col.xs50.s20(for="rate-okayish")
+            input(type="radio", name="rate", id="rate-okayish")
+            span.label_title Okay-ish
+
+          label.label.-radio.col.xs50.s20(for="rate-okay")
+            input(type="radio", name="rate", id="rate-okay")
+            span.label_title Okay
+
+          label.label.-radio.col.xs50.s20(for="rate-good")
+            input(type="radio", name="rate", id="rate-good")
             span.label_title Good
 
-          label.label.-radio.col.xs50.s25
-            input(type="radio", name="rate")
+          label.label.-radio.col.xs50.s20(for="rate-unicorn")
+            input(type="radio", name="rate", id="rate-unicorn")
             span.label_title Like a Unicorn
 
-          label.label.-radio.col.xs50.s25
-            input(type="radio", name="rate")
-            span.label_title Ryan Gosling like
+      hr
+
+      .col
+        h3 Switches
+
+      .col.m50
+        h4 Radio Group Switch
+        .label
+          span.label_title Receive Mails
+          .switchbutton.-radio
+            label.label.-on(for="powerswitch-on") Daily
+            input.on(type="radio" name="powerswitch" id="powerswitch-on")
+            label.label.-off(for="powerswitch-off") Weekly
+            input.off(type="radio" name="powerswitch" id="powerswitch-off")
+            .switchbutton_base
+            .switchbutton_marker
+
+
+      .col.m50
+        h4 Checkbox Switch
+        .label
+          span.label_title Send me Spam Mails
+          .switchbutton.-checkbox
+            label.label.-on(for="checky") No
+            label.label.-off(for="checky") Yes
+            input(type="checkbox" name="value" id="checky")
+            .switchbutton_base
+            .switchbutton_marker
+
+      hr
+
+      .col
+        h3 Buttons
+
+      .col
+        button.btn(type="submit") Submit Button
+
+        button.btn Some Button
+
+        .btnGroup
+          button.btn Left
+          button.btn Right
+
+        .btnGroup
+          button.btn Left
+          button.btn Middle
+          button.btn Right
+
+        .btnGroup
+          button.btn(type="submit") Submit Button
+          a.btn(type="cancel", href="#cancelForm") Cancel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

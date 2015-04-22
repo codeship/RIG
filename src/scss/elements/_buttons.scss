@@ -1,0 +1,61 @@
+.btn {
+  @include appearance(none);
+  display: inline-block;
+  background: color('button', 'bg');
+  border: 1px solid color('button', 'border');
+  color: color('button');
+  border-radius: $base-border-radius;
+  line-height: 2em;
+  font-size: 1rem;
+  margin-bottom: $base-padding;
+  padding: 0 .5em;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    background: darken(color('button', 'bg'), 10%);
+  }
+}
+
+.btn[type="submit"] {
+  background: color('button', 'bgSubmit');
+  border-color: darken(color('button', 'bgSubmit'), 5%);
+
+  &:hover {
+    background: darken(color('button', 'bgSubmit'), 3%);
+  }
+}
+
+.btn[type="cancel"] {
+  background: color('button', 'bgCancel');
+  color: color('button', 'colorSpecial');
+  border-color: darken(color('button', 'bgCancel'), 5%);
+
+  &:hover {
+    background: darken(color('button', 'bgCancel'), 3%);
+  }
+}
+
+.btnGroup {
+  font-size: 0;
+
+  .btn {
+    border-radius: 0;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+
+  .btn:not(:first-child) {
+    border-left: 0;
+  }
+
+  .btn:first-child {
+    border-radius: $base-border-radius 0 0 $base-border-radius;
+  }
+
+  .btn:last-child {
+    border-radius: 0 $base-border-radius $base-border-radius 0;
+  }
+}

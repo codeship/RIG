@@ -40,6 +40,10 @@ select:focus {
   box-sizing: border-box;
 }
 
+.label_title {
+  display: block;
+}
+
 // Input Specific
 #{$all-text-inputs} {
   height: 3em;
@@ -130,19 +134,122 @@ textarea {
       text-align: center;
     }
 
-    .label_title {
-      display: block;
-    }
-
     input[type="radio"] {
       position: relative;
     }
   }
 }
 
+$switchbutton-width: 30px;
 
+.switchbutton {
 
+  display: inline-block;
+  position: relative;
+  font-size: 0;
 
+  .label {
+    display: inline-block;
+    padding: 0;
+    line-height: $switchbutton-width;
+    position: relative;
+    width: 120px;
+    font-size: 1rem;
+  }
+
+  .label.-on {
+    padding-right: $switchbutton-width + 10;
+    text-align: right;
+  }
+
+  .label.-off {
+    padding-left: $switchbutton-width + 10;
+    text-align: left;
+  }
+
+  .label_title {
+    display: block;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    position: absolute;
+    visibility: hidden;
+  }
+
+}
+
+.switchbutton_base {
+  position: absolute;
+  height: $switchbutton-width;
+  width: $switchbutton-width * 2;
+  background: color('switch');
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-$switchbutton-width);
+  pointer-events: none;
+  border-radius: $switchbutton-width / 2;
+}
+
+.switchbutton_marker {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  border-radius: 50%;
+  border: 2px solid darken(color('switch'), 10%);
+  height: $switchbutton-width;
+  width: $switchbutton-width;
+  background: color('switch', 'marker');
+  transform: translateX(-100%);
+  transition: transform 200ms ease-in;
+  pointer-events: none;
+}
+
+.switchbutton.-radio {
+  .switchbutton_base {
+    background: color('switch', 'active')
+  }
+
+  input.on:checked ~ .switchbutton_marker {
+    transform: translateX(-100%);
+  }
+
+  input.off:checked ~ .switchbutton_marker {
+    transform: translateX(0);
+  }
+
+}
+
+.switchbutton.-checkbox {
+
+  .switchbutton_base::after {
+    content: "";
+    position: absolute;
+    height: $switchbutton-width;
+    width: $switchbutton-width * 2;
+    background: color('switch', 'active');
+    border-radius: $switchbutton-width / 2;
+    left: 0;
+    top: 0;
+    transform-origin: 50% 50%;
+    transform: scale3d(0,0,0);
+    transition: transform 200ms ease-in;
+  }
+
+  input:not(:checked) ~ .switchbutton_marker {
+    transform: translateX(-100%);
+  }
+
+  input:checked ~ .switchbutton_marker {
+    transform: translateX(0);
+  }
+
+  input:checked ~ .switchbutton_base::after {
+    transform: scale3d(1,1,1);
+  }
+
+}
 
 
 

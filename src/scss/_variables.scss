@@ -144,6 +144,20 @@ $m-colors: (
     border: #ccc,
     borderHover: #999
   ),
+  'switch': (
+    base: #ddd,
+    marker: #fff,
+    active: #96D992
+  ),
+  'button': (
+    base: #242628,
+    bg: #F5F5F5,
+    border: #ccc,
+    borderHover: #999,
+    colorSpecial: #fff,
+    bgSubmit: #96D992,
+    bgCancel: #D2494D
+  ),
   'menu': (
     base: #242628,
     bg: #fff,

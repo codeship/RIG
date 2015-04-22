@@ -5,7 +5,6 @@ class Rig.Menu
     @toggleFlexMenu()
     @handleDropdowns()
 
-
   toggleFlexMenu: ->
     $('[data-rig-flexmenu-element=toggle]').on 'click', (e) ->
       $('[data-rig-flexmenu-element=menu]').toggleClass 'is-open'
