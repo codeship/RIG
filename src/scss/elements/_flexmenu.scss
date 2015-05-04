@@ -56,17 +56,19 @@
   position: fixed;
 
   top: $base-padding;
+  left: $base-padding;
+  right: $base-padding;
 
   @include larger-than('medium-screen') {
     display: none;
   }
 
   &.-left {
-    left: $base-padding;
+    right: auto;
   }
 
   &.-right {
-    right: $base-padding;
+    left: auto;
   }
 }
 
