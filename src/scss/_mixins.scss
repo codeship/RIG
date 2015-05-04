@@ -1,7 +1,8 @@
 // Mixins for RIG
 
 @mixin sexy-underline($color, $percent: 90%) {
-  background-image: linear-gradient(to bottom, #fff 70%, $color 75%);
+  $_sexyUnderlineBottomColor: #fff;
+  background-image: linear-gradient(to bottom, $_sexyUnderlineBottomColor 70%, $color 75%);
   background-size: 2px 4px;
   background-position: 0 $percent;
   background-repeat: repeat-x;
@@ -28,12 +29,15 @@
 }
 
 @mixin text-selection {
-  &::-webkit-selection {
+
+  &::-webkit-selection { // scss-lint:disable VendorPrefix
     @content;
   }
-  &::-moz-selection {
+
+  &::-moz-selection { // scss-lint:disable VendorPrefix
     @content;
   }
+
   &::selection {
     @content;
   }

@@ -1,5 +1,4 @@
 //
-//
 // GENERAL SETTINGS
 //
 
@@ -116,14 +115,14 @@ strong {
 }
 
 a {
+  @include sexy-underline(color('anchor'));
   color: color('anchor');
   transition: color 200ms, background-image 200ms;
   text-decoration: none;
-  @include sexy-underline(color('anchor'));
 
   &:hover {
-    color: color('anchor', 'hover');
     @include sexy-underline(color('anchor', 'hover'));
+    color: color('anchor', 'hover');
   }
 }
 
@@ -141,6 +140,7 @@ code {
 
 pre {
   display: block;
+
   padding: $base-padding;
   overflow-wrap: break-word;
 }

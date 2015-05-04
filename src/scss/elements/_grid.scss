@@ -13,6 +13,7 @@
 // You can nest your contents in a container if you like
 .container {
   display: inline-block;
+
   width: 100%;
   max-width: $bp-l;
   text-align: left;
@@ -25,6 +26,7 @@
 
 .grid {
   display: block;
+
   width: 100%;
   text-align: left;
   font-size: 0;
@@ -44,6 +46,7 @@
 
   .row {
     display: block;
+
     width: 100%;
     font-size: 0;
   }

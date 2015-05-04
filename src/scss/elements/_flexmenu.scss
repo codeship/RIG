@@ -1,6 +1,7 @@
 .flexMenu {
   display: inline-block;
   position: fixed;
+
   top: 0;
   height: 100vh;
   width: 100%;
@@ -11,18 +12,6 @@
   text-align: left;
   z-index: z-index('flexmenu');
 
-  // Menu Can be attached left or right
-  &.-left {
-    left: 0;
-    border-right: 1px solid color('menu', 'border');
-  }
-
-  &.-right {
-    right: 0;
-    border-left: 1px solid color('menu', 'border');
-  }
-
-  // Have an Offcanvas Menu on small screens
   @include smaller-than('medium-screen') {
     transition: transform 300ms;
 
@@ -39,6 +28,19 @@
     }
   }
 
+  // Menu Can be attached left or right
+  &.-left {
+    left: 0;
+    border-right: 1px solid color('menu', 'border');
+  }
+
+  &.-right {
+    right: 0;
+    border-left: 1px solid color('menu', 'border');
+  }
+
+  // Have an Offcanvas Menu on small screens
+
   a {
     display: block;
     background-image: none;
@@ -52,7 +54,12 @@
 // There is also a Toggle Button for showing the menu when offcanvas
 .flexMenuToggleButton {
   position: fixed;
+
   top: $base-padding;
+
+  @include larger-than('medium-screen') {
+    display: none;
+  }
 
   &.-left {
     left: $base-padding;
@@ -61,18 +68,16 @@
   &.-right {
     right: $base-padding;
   }
-
-  @include larger-than('medium-screen') {
-    display: none;
-  }
 }
 
 // The Flexmenu can have several blocks
 .flexMenu_block {
   padding: 0 $base-padding;
+  z-index: z-index('flexmenu')+1;
 
   a {
     display: block;
+
     padding: round($base-padding/4) 0;
   }
 
@@ -112,6 +117,7 @@
 .flexMenu:not([data-rig-ui-menu=horizontal]) {
 
   @include larger-than('medium-screen') {
+
     &.-left ~ .container {
       padding-left: $e-flexmenu;
     }
@@ -122,6 +128,7 @@
   }
 
   @include larger-than('large-screen', 300px) {
+
     &.-left ~ .container {
       padding-left: $e-flexmenu/2;
     }
@@ -142,6 +149,7 @@
   }
 
   @include larger-than('large-screen', 600px) {
+
     &.-left ~ .container {
       padding-left: 0;
     }
@@ -159,19 +167,22 @@
 
   .flexMenu[data-rig-ui-menu=horizontal] {
     display: block;
+
+    height: auto;
     max-width: 100%;
     border: 0;
     border-bottom: 1px solid color('menu', 'border');
-    height: auto;
     overflow: visible;
 
     .flexMenu_nav {
       display: table;
+
       width: 100%;
     }
 
     .flexMenu_block {
       display: table-cell;
+
       height: auto;
       text-align: left;
 
@@ -181,12 +192,10 @@
       }
 
       &.-left {
-        border-right: 1px solid color('menu', 'border');
         margin-left: 0;
       }
 
       &.-right {
-        border-left: 1px solid color('menu', 'border');
         margin-right: 0;
       }
     }
@@ -204,11 +213,13 @@
 
       .flexMenu_nav {
         display: flex;
+
         justify-content: space-between;
       }
 
       .flexMenu_block {
         display: flex;
+
         flex-direction: column;
         flex-grow: 1; // Let the Box fill out the rest
         // Align Everything centered on x and y axis

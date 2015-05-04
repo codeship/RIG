@@ -1,8 +1,10 @@
 // General Settings
+// scss-lint:disable QualifyingElement
 #{$all-text-inputs},
 textarea,
 select {
   display: block;
+
   width: 100%;
   font-size: 1rem;
   border: 1px solid color('input', 'border');
@@ -12,17 +14,20 @@ select {
   transition: border 200ms;
 }
 
+// scss-lint:disable QualifyingElement
 input[type="checkbox"],
 input[type="radio"] {
   cursor: pointer;
 }
 
+// scss-lint:disable QualifyingElement
 #{$all-text-inputs-hover},
 textarea:hover,
 select:hover {
   border: 1px solid color('input', 'borderHover');
 }
 
+// scss-lint:disable QualifyingElement
 #{$all-text-inputs-focus},
 textarea:focus,
 select:focus {
@@ -31,10 +36,12 @@ select:focus {
   border: 1px solid color('input', 'borderHover');
 }
 
+// scss-lint:enable QualifyingElement
 // Labels
 .label {
   display: block;
   position: relative;
+
   width: 100%;
   padding: $base-padding 0;
   box-sizing: border-box;
@@ -52,7 +59,7 @@ select:focus {
 }
 
 // Select Specific
-select {
+select { // scss-lint:disable QualifyingElement
   @include appearance(none);
   height: 3em;
   line-height: 3em;
@@ -65,7 +72,7 @@ select {
 }
 
 // Textarea Specific
-textarea {
+textarea { // scss-lint:disable QualifyingElement
   resize: vertical; // No Horizontal Resizing as this tends to break the UX
   padding: .7em; // half of line-height
   line-height: 1.4em;
@@ -84,38 +91,41 @@ textarea {
   }
 
   &:hover {
+    // scss-lint:disable QualifyingElement
     input[type="checkbox"],
     input[type="radio"] {
       box-shadow: 0 0 0 2px color('anchor');
     }
   }
 
+  // scss-lint:disable QualifyingElement
   input[type="checkbox"],
   input[type="radio"] {
-    margin: 0;
     position: absolute;
-    left: 0;
+
     top: 50%;
+    left: 0;
+    margin: 0;
     transform: translateY(-50%);
 
     &:checked {
       background-color: color('anchor');
-    }
 
-    &:checked + .label_title::before {
-      // Show an indicator if active
+      + .label_title::before {
+        // Show an indicator if active
+      }
     }
   }
 }
 
-.label.-checkbox {
-  input[type="checkbox"] {
+.label.-checkbox {          // scss-lint:disable MergeableSelector
+  input[type="checkbox"] {  // scss-lint:disable QualifyingElement
     border-radius: 10%;
   }
 }
 
-.label.-radio {
-  input[type="radio"] {
+.label.-radio {             // scss-lint:disable MergeableSelector
+  input[type="radio"] {     // scss-lint:disable QualifyingElement
     border-radius: 50%;
   }
 }
@@ -134,7 +144,7 @@ textarea {
       text-align: center;
     }
 
-    input[type="radio"] {
+    input[type="radio"] {    // scss-lint:disable QualifyingElement
       position: relative;
     }
   }
@@ -143,26 +153,27 @@ textarea {
 $switchbutton-width: 30px;
 
 .switchbutton {
-
   display: inline-block;
   position: relative;
+
   font-size: 0;
 
   .label {
     display: inline-block;
+    position: relative;
+
+    width: 120px;
     padding: 0;
     line-height: $switchbutton-width;
-    position: relative;
-    width: 120px;
     font-size: 1rem;
   }
 
-  .label.-on {
+  .label.-on {        // scss-lint:disable MergeableSelector
     padding-right: $switchbutton-width + 10;
     text-align: right;
   }
 
-  .label.-off {
+  .label.-off {       // scss-lint:disable MergeableSelector
     padding-left: $switchbutton-width + 10;
     text-align: left;
   }
@@ -171,9 +182,11 @@ $switchbutton-width: 30px;
     display: block;
   }
 
+  // scss-lint:disable QualifyingElement
   input[type="radio"],
   input[type="checkbox"] {
     position: absolute;
+
     visibility: hidden;
   }
 
@@ -181,12 +194,12 @@ $switchbutton-width: 30px;
 
 .switchbutton_base {
   position: absolute;
+
+  top: 0;
+  left: 50%;
   height: $switchbutton-width;
   width: $switchbutton-width * 2;
   background: color('switch');
-  position: absolute;
-  top: 0;
-  left: 50%;
   transform: translateX(-$switchbutton-width);
   pointer-events: none;
   border-radius: $switchbutton-width / 2;
@@ -195,70 +208,61 @@ $switchbutton-width: 30px;
 .switchbutton_marker {
   display: inline-block;
   position: absolute;
+
   left: 50%;
-  border-radius: 50%;
-  border: 2px solid darken(color('switch'), 10%);
   height: $switchbutton-width;
   width: $switchbutton-width;
+  border-radius: 50%;
+  border: 2px solid darken(color('switch'), 10%);
   background: color('switch', 'marker');
   transform: translateX(-100%);
   transition: transform 200ms ease-in;
   pointer-events: none;
 }
 
-.switchbutton.-radio {
+.switchbutton.-radio { // scss-lint:disable MergeableSelector
+
   .switchbutton_base {
-    background: color('switch', 'active')
+    background: color('switch', 'active');
   }
 
-  input.on:checked ~ .switchbutton_marker {
+  input.on:checked ~ .switchbutton_marker { // scss-lint:disable QualifyingElement
     transform: translateX(-100%);
   }
 
-  input.off:checked ~ .switchbutton_marker {
+  input.off:checked ~ .switchbutton_marker { // scss-lint:disable QualifyingElement
     transform: translateX(0);
   }
 
 }
 
-.switchbutton.-checkbox {
+.switchbutton.-checkbox { // scss-lint:disable MergeableSelector
 
   .switchbutton_base::after {
-    content: "";
+    content: '';
     position: absolute;
+
+    top: 0;
+    left: 0;
     height: $switchbutton-width;
     width: $switchbutton-width * 2;
     background: color('switch', 'active');
     border-radius: $switchbutton-width / 2;
-    left: 0;
-    top: 0;
     transform-origin: 50% 50%;
-    transform: scale3d(0,0,0);
+    transform: scale3d(0, 0, 0);
     transition: transform 200ms ease-in;
   }
 
-  input:not(:checked) ~ .switchbutton_marker {
+  input:not(:checked) ~ .switchbutton_marker { // scss-lint:disable QualifyingElement
     transform: translateX(-100%);
   }
 
-  input:checked ~ .switchbutton_marker {
+  input:checked ~ .switchbutton_marker { // scss-lint:disable QualifyingElement
     transform: translateX(0);
   }
 
-  input:checked ~ .switchbutton_base::after {
-    transform: scale3d(1,1,1);
+  input:checked ~ .switchbutton_base::after { // scss-lint:disable QualifyingElement
+    transform: scale3d(1, 1, 1);
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
