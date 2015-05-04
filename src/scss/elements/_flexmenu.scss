@@ -184,6 +184,7 @@
 
     .flexMenu_block {
       display: table-cell;
+      vertical-align: middle;
 
       height: auto;
       text-align: left;
@@ -199,6 +200,7 @@
 
       &.-right {
         margin-right: 0;
+        text-align: right;
       }
     }
 
