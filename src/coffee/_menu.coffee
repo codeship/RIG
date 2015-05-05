@@ -12,4 +12,7 @@ class Rig.Menu
   handleDropdowns: ->
     $('[data-dropdown-element=toggle]').on 'click', (e) ->
       $(this).toggleClass 'is-open'
+      $('body').bind 'click.dropdown', ->
+        $('[data-dropdown-element=toggle].is-open').removeClass 'is-open'
+        $('body').unbind 'click.dropdown'
 
