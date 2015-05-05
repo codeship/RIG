@@ -176,6 +176,10 @@
     border-bottom: 1px solid color('menu', 'border');
     overflow: visible;
 
+    ~ .container {
+      margin-top: 4em;
+    }
+
     .flexMenu_nav {
       display: table;
 
