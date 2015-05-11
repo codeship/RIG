@@ -2,8 +2,8 @@
 
 @mixin sexy-underline($color, $percent: 90%) {
   $_sexyUnderlineBottomColor: #fff;
-  background-image: linear-gradient(to bottom, $_sexyUnderlineBottomColor 70%, $color 75%);
-  background-size: 2px 4px;
+  background-image: linear-gradient(to bottom, $_sexyUnderlineBottomColor 0%, $color 1%);
+  background-size: 1px 1px;
   background-position: 0 $percent;
   background-repeat: repeat-x;
 }
