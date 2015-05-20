@@ -89,6 +89,51 @@ ul {
   padding: 0;
 }
 
+ol {
+  list-style: none;
+  counter-reset: ol;
+  padding: $base-padding/3 0 $base-padding/3 $base-padding;
+
+  li {
+    line-height: 1.4em;
+  }
+
+  > li {
+    counter-increment: ol;
+
+    &::before {
+      content: counter(ol) ".";
+    }
+  }
+
+  ol {
+    counter-reset: ol1;
+
+    > li {
+      counter-increment: ol1;
+
+      &::before {
+        content: counter(ol) "." counter(ol1) ".";
+      }
+    }
+
+    ol {
+      counter-reset: ol2;
+
+      > li {
+        counter-increment: ol2;
+
+        &::before {
+          content: counter(ol) "." counter(ol1) "." counter(ol2) ".";
+        }
+      }
+    }
+  }
+}
+
+
+
+
 p {
   font-size: 1rem;
   line-height: 1.4em;
@@ -138,8 +183,13 @@ code {
 pre {
   display: block;
 
-  padding: $base-padding;
+  padding: 0;
   overflow-wrap: break-word;
+
+  code {
+    padding: $base-padding;
+    display: block
+  }
 }
 
 a,
