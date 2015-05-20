@@ -1,8 +1,45 @@
-h1.section-title GridSystem
+h1.section-title#grid Grid System
 
 p This Grid is Percentage based. From 5 - 100%. It is seperated by 5% steps to make calculations easy and intuitive. If you want to use columns divided by 3 you can use 33% and 66%.
 
+.grid.grid-presentation
+  .row: .col.s5 5
+  .row: .col.s10 10
+  .row: .col.s15 15
+  .row: .col.s20 20
+  .row: .col.s25 25
+  .row: .col.s30 30
+  .row: .col.s33 33
+  .row: .col.s35 35
+  .row: .col.s40 40
+  .row: .col.s45 45
+  .row: .col.s50 50
+  .row: .col.s55 55
+  .row: .col.s60 60
+  .row: .col.s65 65
+  .row: .col.s66 66
+  .row: .col.s70 70
+  .row: .col.s75 75
+  .row: .col.s80 80
+  .row: .col.s85 85
+  .row: .col.s90 90
+  .row: .col.s95 95
+  .row: .col.s100 100
+
+
 p columns are hosted in rows and are fully responsive if you want them to.
+
+p So the basic structre of a grid would look something like this:
+
+pre: code.
+  &lt;div class="grid"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col s50 m25 l20"&gt;
+        ...
+      &lt;/div&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
 
 p.example Example:
 
@@ -42,6 +79,31 @@ p.
               p .col.s33
 
 p.example Example:
+p.
+  Lets create a more complex example where we want to have 6 columns on large screens. For achiving this you would need to wrap 50% cols into three 33% cols.
+
+.grid.grid-presentation
+  .row
+    .col.s33.-cling
+      .row
+        .col.l50
+          p .col.l50
+        .col.l50
+          p .col.l50
+    .col.s33.-cling
+      .row
+        .col.l50
+          p .col.l50
+        .col.l50
+          p .col.l50
+    .col.s33.-cling
+      .row
+        .col.l50
+          p .col.l50
+        .col.l50
+          p .col.l50
+
+p.example Example:
 p Using Tail and Offset for handling spaces between you columns
 
 .grid.grid-presentation
@@ -55,17 +117,3 @@ p Using Tail and Offset for handling spaces between you columns
       p .col.s50.s-tail10
     .col.s40
       p .col.s40
-
-
-
-
-
-
-
-
-
-
-
-
-
-
