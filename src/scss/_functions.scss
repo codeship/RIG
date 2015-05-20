@@ -7,3 +7,4 @@
 @function color($color-name, $filter: base) {
   @return map-get(map-get($m-colors, $color-name), $filter);
 }
+
