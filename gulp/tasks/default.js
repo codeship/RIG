@@ -3,7 +3,9 @@ var gulp        = require('gulp'),
     config      = require('../config');
 
 gulp.task('default',['clean'], function() {
-  gulp.start('serve');
+  setTimeout(function () {
+    gulp.start('serve');
+  }, 1000);
 });
 
 gulp.task('clean', function() {
