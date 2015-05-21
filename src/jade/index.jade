@@ -13,7 +13,7 @@ html(lang="en")
     //- Loading Font Awesome
     link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
 
-    link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css")
+    link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github.min.css")
 
     //- Loading other Libraries
     //- -----------------------
@@ -55,6 +55,26 @@ html(lang="en")
       include ./partials/_typography.jade
       include ./partials/_grid.jade
       include ./partials/_forms.jade
+
+    footer
+      .grid
+        .row
+          .col.m50
+            p RIG Framework is shared under the MIT License
+          .col.m50.ta-right
+            p This page uses highlight.js for coloring codeblocks.
+        .row
+          .col.m20
+            p &copy; 2015 by Codeship
+          .col.m60.ta-center
+            p
+              | A project by
+              a(href="https://twitter.com/Codebryo" target="_blank") @Codebryo
+              | and made possible through
+              a(href="https://twitter.com/codeship" target="_blank") @codeship
+          .col.m20.ta-right
+            p
+              a(href="https://github.com/codeship/RIG" target="_blank") Find RIG on Github
 
     script(src="/assets/js/rig.js" async="true")
     script(type='text/javascript').
