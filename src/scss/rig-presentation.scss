@@ -6,8 +6,18 @@
   padding: $base-padding;
 }
 
+.flexMenu_block_item {
+  padding: 0 10px;
+}
+
 .example {
   color: rgba(#000, .5);
+}
+
+.byCodeship {
+  display: inline-block;
+  transform: translateY(-100%);
+  font-style: italic;
 }
 
 .section-title {
@@ -30,4 +40,43 @@
       border: 0;
     }
   }
+}
+
+.titleBlock {
+  background-image: url(/assets/imgs/title.jpg);
+  background-position: center center;
+  height: 80vh;
+  position: relative;
+
+  h1 {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    border: 3px solid #fff;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    transform: translate(-50%, -50%);
+
+    .version {
+      position: absolute;
+      font-size: .9rem;
+      line-height: 1em;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.subtitle {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.2em;
 }

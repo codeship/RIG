@@ -48,7 +48,8 @@ h6,
 .like-h6 {
   font-family: $f-heading;
   margin: 0;
-  line-height: 2em;
+  line-height: 1.2em;
+  margin: .6em 0;
 }
 
 h1,
@@ -96,6 +97,10 @@ ol {
 
   li {
     line-height: 1.4em;
+
+    &::before {
+      margin-right: .5em;
+    }
   }
 
   > li {

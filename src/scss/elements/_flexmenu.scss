@@ -169,6 +169,7 @@
 
   .flexMenu[data-rig-ui-menu=horizontal] {
     display: block;
+    position: relative;
 
     height: auto;
     max-width: 100%;
@@ -176,9 +177,14 @@
     border-bottom: 1px solid color('menu', 'border');
     overflow: visible;
 
-    ~ .container {
-      margin-top: 4em;
+    &.-sticky {
+      position: fixed;
+
+      + .container {
+        margin-top: 4em;
+      }
     }
+
 
     .flexMenu_nav {
       display: table;
