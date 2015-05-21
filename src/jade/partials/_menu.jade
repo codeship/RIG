@@ -6,14 +6,7 @@ button.flexMenuToggleButton.-right(data-rig-flexmenu-element="toggle") Menu
 .flexMenu.-left(data-rig-ui-menu="horizontal", data-rig-flexmenu-element="menu")
   nav.flexMenu_nav
     .flexMenu_block.-left.-logo
-      a(href="/"): h1 RIG
-    ul.flexMenu_block
-      li.flexMenu_block_item(data-ui-component="dropdown")
-        a(href="javascript:void(0)", data-dropdown-element="toggle") sections
-        ul(data-dropdown-element="dropdown", data-rig-ui-dropdown="circle")
-          li: a(href="#typography") Typography
-          li: a(href="#forms") Forms
-          li: a(href="#grid") Grid
-
-    .flexMenu_block.-right
-      a(href="/") contact
+      a(href="/"): h2: span.icon.fa.fa-institution
+    ul.flexMenu_block.-right
+      li.flexMenu_block_item: a(href="#toc") Table of Contents
+      li.flexMenu_block_item: a(href="https://codeship.com") Codeship
