@@ -29,7 +29,7 @@
 
 .grid-presentation {
   .col {
-    background: #bada55; // scss-lint:disable ColorVariable
+    background: #C6E2FF; // scss-lint:disable ColorVariable
     padding: 0;
     border-left: $base-col-padding solid rgba(#000, .1);
     border-right: $base-col-padding solid rgba(#000, .1);
@@ -53,8 +53,8 @@
     margin: 0;
     top: 50%;
     left: 50%;
-    color: #fff;
-    border: 3px solid #fff;
+    color: #fff; // scss-lint:disable ColorVariable
+    border: 3px solid #fff; // scss-lint:disable ColorVariable
     height: 80px;
     width: 80px;
     line-height: 80px;

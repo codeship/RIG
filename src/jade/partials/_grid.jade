@@ -1,6 +1,12 @@
 h1.section-title#grid Grid System
 
-p This Grid is Percentage based. From 5 - 100%. It is seperated by 5% steps to make calculations easy and intuitive. If you want to use columns divided by 3 you can use 33% and 66%.
+p.
+  One important element when building a modern webpage is nearly always a grid system.
+  <br>
+  The grid provided by RIG is rercentage based and available are all 5% steps from 5 - 100%. This should make calculations easy and intuitive. If you want to use columns divided by 3 you can use 33% and 66%.
+  <br>
+  Instead of a 12 or 16 col layout this grid system should provde you maximum flexibility for what you may want to achive.
+  Of course it is built <strong>mobile first</strong>
 
 .grid.grid-presentation
   .row: .col.s5 5
@@ -27,9 +33,15 @@ p This Grid is Percentage based. From 5 - 100%. It is seperated by 5% steps to m
   .row: .col.s100 100
 
 
-p columns are hosted in rows and are fully responsive if you want them to.
+p Columns are hosted in rows and are fully responsive if you want them to. By default RIG provides breakpoints for:
+ul
+  li extra small screens - prefixed with <strong>xs</strong>
+  li small screens - prefixed with <strong>s</strong>
+  li medium screens - prefixed with <strong>m</strong>
+  li large screens - prefixed with <strong>l</strong>
 
-p So the basic structre of a grid would look something like this:
+p All those definitions of course are counting up to larger screens. So if you define a small screen to use 50% columns, they will also be 50% for medium and large screens unless you define something else.
+p So the basic structre of a grid could look something like this:
 
 pre: code.
   &lt;div class="grid"&gt;
@@ -40,6 +52,8 @@ pre: code.
       ...
     &lt;/div&gt;
   &lt;/div&gt;
+
+p The following Section will host some other examples for you that show what classes are set as text.
 
 p.example Example:
 
@@ -66,17 +80,20 @@ p.
   .row
     .col
       .row
-        .col.s50.m50.l25
-          p .col.s50.m50.l25
-        .col.s50.m50.l25
-          p .col.s50.m50.l25
+        .col.s50.m50
+          p .col.s50.m50
           .row
-            .col.s33.m50.-cling
-              p .col.s33.m50
-            .col.s33.l70.-cling
-              p .col.s33.l70
-            .col.s33.-cling
-              p .col.s33
+            .col.m50
+              p .col.m50
+            .col.m50
+              p .col.m50
+        .col.s50.m50
+          p .col.s50.m50
+          .row
+            .col.m50
+              p .col.m50
+            .col.m50
+              p .col.m50
 
 p.example Example:
 p.
