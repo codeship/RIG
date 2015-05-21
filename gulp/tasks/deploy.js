@@ -9,7 +9,7 @@ var uglify      = require('gulp-uglify');
 
 var config      = require('../config');
 
-gulp.task('deploy', ['deploy-jade', 'deploy-scss', 'deploy-coffee'], function() {
+gulp.task('deploy', ['deploy-jade', 'deploy-scss', 'deploy-coffee', 'deploy-imgs'], function() {
   return console.log('RIG files have been built into the deployfolder correctly. Yay.');
 });
 
@@ -44,7 +44,7 @@ gulp.task('deploy-scss', ['scss-lint'], function() {
 
 });
 
-gulp.task('deploy-coffee', ['scss-lint'], function() {
+gulp.task('deploy-coffee', function() {
 
   return gulp.src(config.coffee.src)
     .pipe(include())
@@ -56,4 +56,14 @@ gulp.task('deploy-coffee', ['scss-lint'], function() {
     .pipe(gulp.dest(config.paths.deploy + config.coffee.dest))
 
 });
+
+gulp.task('deploy-imgs', function() {
+
+  return gulp.src([config.paths.imgs])
+    .pipe(gulp.dest(config.paths.deploy+'/assets/imgs'));
+
+});
+
+
+
 

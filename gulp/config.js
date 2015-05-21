@@ -55,7 +55,8 @@ module.exports = {
     dev: './dev/',
     deploy: './deploy/',
     build: './build/',
-    vendors: './src/vendors'
+    vendors: './src/vendors',
+    imgs: './src/imgs/**/*.*'
   }
 
 }

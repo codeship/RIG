@@ -17,7 +17,7 @@ var gulp        = require('gulp'),
 
     config      = require('../config');
 
-gulp.task('assets', ['assets-sass', 'assets-coffee', 'assets-jade'], function() {
+gulp.task('assets', ['assets-sass', 'assets-coffee', 'assets-jade', 'assets-move-imgs'], function() {
   return 'Assets have been precompiled';
 });
 
@@ -77,6 +77,11 @@ gulp.task('assets-jade', function() {
     .pipe(gulp.dest(config.paths.dev + config.jade.dest))
     .pipe(reload({stream: true}))
     .pipe(notify('Jade Files Compiled'));
+});
+
+gulp.task('assets-move-imgs', function() {
+  return gulp.src([config.paths.imgs])
+  .pipe(gulp.dest(config.paths.dev+'/assets/imgs'));
 });
 
 
