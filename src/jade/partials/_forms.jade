@@ -1,5 +1,13 @@
 h1.section-title Forms
 
+p Forms are important.
+
+pre: code.
+  &lt;label class="label" for="name"&gt;
+    &lt;span class="label_title"&gt;Whats your name?&lt;/span&gt;
+    &lt;input type="text" name="name" id="name" /&gt;
+  &lt;/label&gt;
+
 p Building some Form examples
 
 form.form
@@ -27,12 +35,17 @@ form.form
     .row
       .col
         h3 Checkbox and Radio Button Interactions
-      .col.m50
+
         label.label.-checkbox
           input(type="checkbox")
           span.label_title Checkbox Example
 
-      .col.m50
+        pre: code.
+          &lt;label class="label -checkbox" for="subscribe"&gt;
+            &lt;input type="checkbox" name="subscribe" id="subscribe" /&gt;
+            &lt;span class="label_title"&gt;Do you want to subscribe?&lt;/span&gt;
+          &lt;/label&gt;
+
         .radiogroup
           label.label.-radio
             input(type="radio", name="language")
@@ -50,7 +63,24 @@ form.form
             input(type="radio", name="language")
             span.label_title Python
 
+        pre: code.
+          &lt;div class="radiogroup"&gt;
+
+            &lt;label class="label -radio" for="language"&gt;
+              &lt;input type="radio" name="language" /&gt;
+              &lt;span class="label_title"&gt;JavaScript&lt;/span&gt;
+            &lt;/label&gt;
+
+            &lt;label class="label -radio" for="language"&gt;
+              &lt;input type="radio" name="language" /&gt;
+              &lt;span class="label_title"&gt;JavaScript&lt;/span&gt;
+            &lt;/label&gt;
+
+          &lt;/div&gt;
+
       .col
+        p You could actually make the radiogroup horizontal and responsive by using the built in grid system.
+
         h3 How would you rate this framework ?
         .radiogroup.-horizontal.row
           label.label.-radio.col.xs50.s20(for="rate-notgood")
@@ -72,6 +102,21 @@ form.form
           label.label.-radio.col.xs50.s20(for="rate-unicorn")
             input(type="radio", name="rate", id="rate-unicorn")
             span.label_title Like a Unicorn
+
+        pre: code.
+          &lt;div class="radiogroup -horizontal row"&gt;
+
+            &lt;label class="label -radio col s50" for="language"&gt;
+              &lt;input type="radio" name="language" /&gt;
+              &lt;span class="label_title"&gt;JavaScript&lt;/span&gt;
+            &lt;/label&gt;
+
+            &lt;label class="label -radio col s50" for="language"&gt;
+              &lt;input type="radio" name="language" /&gt;
+              &lt;span class="label_title"&gt;JavaScript&lt;/span&gt;
+            &lt;/label&gt;
+
+          &lt;/div&gt;
 
       hr
 
@@ -124,33 +169,3 @@ form.form
         .btnGroup
           button.btn(type="submit") Submit Button
           a.btn(type="cancel", href="#cancelForm") Cancel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
