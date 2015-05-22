@@ -25,8 +25,21 @@ html(lang="en")
 
   body
 
-    include ./partials/_menu.jade
+    //- All the Markup for our menu.
+    //- It automatically jumps from vertical to horizontal. No copy paste of menu entries
 
+    //- Example menu left offcanvas and horizontal
+    button.flexMenuToggleButton.-right(data-rig-flexmenu-element="toggle") Menu
+    .flexMenu.-left(data-rig-ui-menu="horizontal" data-rig-flexmenu-element="menu")
+      nav.flexMenu_nav
+        .flexMenu_block.-left.-logo
+          a(href="/"): h2: span.icon.fa.fa-institution
+        ul.flexMenu_block.-right
+          li.flexMenu_block_item: a(href="#toc") Table of Contents
+          li.flexMenu_block_item: a(href="https://github.com/codeship/RIG" target="_blank") RIG on Github
+          li.flexMenu_block_item: a(href="https://codeship.com" target="_blank") Codeship
+
+    //- Fancy Looking Title Block
     .titleBlock
       h1
         | RIG
@@ -55,6 +68,7 @@ html(lang="en")
       include ./partials/_typography.jade
       include ./partials/_grid.jade
       include ./partials/_forms.jade
+      include ./partials/_menu.jade
 
     footer
       .grid
