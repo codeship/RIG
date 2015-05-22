@@ -22,7 +22,8 @@
     //   content: '-';
     // }
 
-    ~ [data-dropdown-element=dropdown] {
+    ~ [data-dropdown-element=dropdown],
+    > [data-dropdown-element=dropdown] {
       display: block;
 
       pointer-events: auto;
