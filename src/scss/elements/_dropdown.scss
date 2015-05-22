@@ -9,18 +9,18 @@
 [data-dropdown-element=toggle] {
   position: relative;
 
-  &::after {
-    content: '+';
-    position: absolute;
+  // &::after {
+  //   content: '+';
+  //   position: absolute;
 
-    right: 0;
-  }
+  //   right: 0;
+  // }
 
   &.is-open {
 
-    &::after {
-      content: '-';
-    }
+    // &::after {
+    //   content: '-';
+    // }
 
     ~ [data-dropdown-element=dropdown] {
       display: block;
