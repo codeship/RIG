@@ -18,8 +18,11 @@ module.exports = {
     watch: './src/scss/**/*.scss',
     src: './src/scss/**/*.scss',
     dest: './assets/css/',
-    compile: {
-      outputStyle: 'nested'
+    compileDev: {
+      outputStyle: 'expanded'
+    },
+    compileProd: {
+      outputStyle: 'compressed',
     },
 
     autoprefixer: {
@@ -46,15 +49,17 @@ module.exports = {
     watch: './src/jade/**/*.jade',
     src: './src/jade/**/*.jade',
     dest: './',
-    compile: {
+    compileDev: {
       pretty: true
+    },
+    compileDev: {
+      pretty: false
     }
   },
 
   paths: {
     dev: './dev/',
-    deploy: './deploy/',
-    build: './build/',
+    prod: './prod/',
     vendors: './src/vendors',
     imgs: './src/imgs/**/*.*'
   }

@@ -4,12 +4,16 @@ var gulp        = require('gulp'),
 
 gulp.task('default',['clean'], function() {
   setTimeout(function () {
-    gulp.start('serve');
+    gulp.start('assets');
   }, 1000);
 });
 
+// Remove existing Folders that where created before
 gulp.task('clean', function() {
-  return del([config.paths.dev,config.paths.build,config.paths.deploy]);
+  return del([
+    config.paths.dev,
+    config.paths.prod
+  ]);
 });
 
 

@@ -1,25 +1,50 @@
 var gulp        = require('gulp'),
+    argv        = require('yargs').argv,
 
     notify      = require('gulp-notify'),
     filter      = require('gulp-filter'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload,
 
+    gulpif      = require('gulp-if'),
     plumber     = require('gulp-plumber'),
+    include     = require('gulp-include'),
+    uglify      = require('gulp-uglify'),
+    RevAll      = require('gulp-rev-all'),
+
+    sourcemaps  = require('gulp-sourcemaps'),
+
     sass        = require('gulp-sass'),
     scsslint    = require('gulp-scss-lint'),
     autoprefixer= require('gulp-autoprefixer'),
 
-    include     = require('gulp-include'),
     coffee      = require('gulp-coffee'),
 
     jade        = require('gulp-jade'),
 
     config      = require('../config');
 
-gulp.task('assets', ['assets-sass', 'assets-coffee', 'assets-jade', 'assets-move-imgs'], function() {
-  return 'Assets have been precompiled';
-});
+if(argv.production) {
+  argv.development = false;
+}
+else {
+  argv.development = true;
+}
+
+gulp.task('assets',
+  [
+    'assets-sass',
+    'assets-coffee',
+    'assets-jade',
+    'assets-imgs'
+  ], function() {
+    if(argv.production) {
+      gulp.start('assets-revision');
+    }
+    return 'Assets have been precompiled';
+  }
+);
+
 
 gulp.task('assets-sass', ['scss-lint'], function() {
 
@@ -29,15 +54,24 @@ gulp.task('assets-sass', ['scss-lint'], function() {
         errorHandler: notify.onError("Error: <%= error.message %>")
       }
     ))
-    .pipe(sass(config.sass.compile))
+    .pipe(sourcemaps.init())
+    .pipe(
+      gulpif(argv.production,
+        sass(config.sass.compileProd), // Run Porduction Options
+        sass(config.sass.compileDev)   // Run Development Options
+    ))
     .pipe(autoprefixer(
       config.sass.autoprefixer
     ))
+    .pipe(sourcemaps.write('.'))
     .pipe(plumber.stop())
-    .pipe(gulp.dest(config.paths.dev + config.sass.dest))
-    .pipe(reload({stream: true}))
-    .pipe(notify('Sass Files Compiled'));
-
+    .pipe(
+      gulpif(argv.production,
+        gulp.dest(config.paths.prod + config.sass.dest), // Run Porduction Options
+        gulp.dest(config.paths.dev + config.sass.dest)   // Run Development Options
+    ))
+    .pipe(gulpif(argv.development, reload({stream: true})))
+    .pipe(gulpif(argv.development, notify('Sass Files Compiled')));
 });
 
 gulp.task('scss-lint', function() {
@@ -56,11 +90,18 @@ gulp.task('assets-coffee', function() {
       }
     ))
     .pipe(include())
+    .pipe(sourcemaps.init())
     .pipe(coffee(config.coffee.compiler))
+    .pipe(gulpif(argv.production, uglify()))
+    .pipe(sourcemaps.write('.'))
     .pipe(plumber.stop())
-    .pipe(gulp.dest(config.paths.dev + config.coffee.dest))
-    .pipe(reload({stream: true}))
-    .pipe(notify('Coffee Files Compiled'));
+    .pipe(
+      gulpif(argv.production,
+        gulp.dest(config.paths.prod + config.coffee.dest), // Run Porduction Options
+        gulp.dest(config.paths.dev + config.coffee.dest)   // Run Development Options
+    ))
+    .pipe(gulpif(argv.development, reload({stream: true})))
+    .pipe(gulpif(argv.development, notify('Coffee Files Compiled')));
 });
 
 gulp.task('assets-jade', function() {
@@ -73,15 +114,36 @@ gulp.task('assets-jade', function() {
     .pipe(filter(function (file) {
       return !/\/_/.test(file.path);
     }))
-    .pipe(jade(config.jade.compile))
-    .pipe(gulp.dest(config.paths.dev + config.jade.dest))
-    .pipe(reload({stream: true}))
-    .pipe(notify('Jade Files Compiled'));
+    .pipe(
+      gulpif(argv.production,
+        jade(config.jade.compileProd), // Run Porduction Options
+        jade(config.jade.compileDev)   // Run Development Options
+    ))
+    .pipe(plumber.stop())
+    .pipe(
+      gulpif(argv.production,
+        gulp.dest(config.paths.prod + config.jade.dest), // Run Porduction Options
+        gulp.dest(config.paths.dev + config.jade.dest)   // Run Development Options
+    ))
+    .pipe(gulpif(argv.development, reload({stream: true})))
+    .pipe(gulpif(argv.development, notify('Jade Files Compiled')));
 });
 
-gulp.task('assets-move-imgs', function() {
+gulp.task('assets-imgs', function() {
   return gulp.src([config.paths.imgs])
-  .pipe(gulp.dest(config.paths.dev+'/assets/imgs'));
+    .pipe(
+      gulpif(argv.production,
+        gulp.dest(config.paths.prod + '/assets/imgs'), // Run Porduction Options
+        gulp.dest(config.paths.dev + '/assets/imgs')   // Run Development Options
+    ));
 });
+
+gulp.task('assets-revision', function() {
+  var revAll = new RevAll();
+
+  return gulp.src(config.paths.prod + '/**')
+    .pipe(revAll.revision())
+    .pipe(gulp.dest('cdn'));
+})
 
 
