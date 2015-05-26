@@ -62,9 +62,9 @@ module.exports = {
   },
 
   paths: {
-    dev: './dev',
-    build: './build',
-    deploy: './deploy',
+    dev: './dev/',
+    build: './build/',
+    deploy: './deploy/',
     vendors: './src/vendors',
     imgs: './src/imgs/**/*.*'
   }
