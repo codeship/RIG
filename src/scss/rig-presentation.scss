@@ -27,6 +27,19 @@
   border-bottom: 1px solid color('body');
 }
 
+.flexMenuToggleButton {
+  z-index: 1;
+  background: #000;
+  color: #fff;
+  border: 3px solid #fff;
+  height: 40px;
+  width: 40px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .flexMenu_block.-logo {
   a {
     padding: 0;
@@ -38,6 +51,7 @@
     width: 40px;
     line-height: 45px;
     margin: 10px;
+    text-align: center;
   }
 }
 
