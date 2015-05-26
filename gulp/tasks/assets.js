@@ -140,7 +140,7 @@ gulp.task('assets-imgs', function() {
 gulp.task('assets-revision', function() {
   var revAll = new RevAll(config.revision);
 
-  return gulp.src(config.paths.prod + '/**')
+  return gulp.src(config.paths.build + '/**')
     .pipe(revAll.revision())
     .pipe(gulp.dest('deploy'));
 })
