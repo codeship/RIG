@@ -27,6 +27,20 @@
   border-bottom: 1px solid color('body');
 }
 
+.flexMenu_block.-logo {
+  a {
+    padding: 0;
+  }
+
+  h2 {
+    border: 3px solid #000;
+    height: 40px;
+    width: 40px;
+    line-height: 45px;
+    margin: 10px;
+  }
+}
+
 // Special Coloring for the GRID Blocks
 .grid-presentation {
   .col {
@@ -57,9 +71,9 @@
     left: 50%;
     color: #fff; // scss-lint:disable ColorVariable
     border: 3px solid #fff; // scss-lint:disable ColorVariable
-    height: 80px;
-    width: 80px;
-    line-height: 80px;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
     transform: translate(-50%, -50%);
 
     .version {
