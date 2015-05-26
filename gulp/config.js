@@ -57,9 +57,14 @@ module.exports = {
     }
   },
 
+  revision: {
+    dontRenameFile: [/^\/favicon.ico$/g, '.html']
+  },
+
   paths: {
-    dev: './dev/',
-    prod: './prod/',
+    dev: './dev',
+    build: './build',
+    deploy: './deploy',
     vendors: './src/vendors',
     imgs: './src/imgs/**/*.*'
   }

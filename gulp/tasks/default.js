@@ -12,7 +12,8 @@ gulp.task('default',['clean'], function() {
 gulp.task('clean', function() {
   return del([
     config.paths.dev,
-    config.paths.prod
+    config.paths.build,
+    config.paths.deploy
   ]);
 });
 

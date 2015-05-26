@@ -41,7 +41,6 @@ gulp.task('assets',
     if(argv.production) {
       gulp.start('assets-revision');
     }
-    return 'Assets have been precompiled';
   }
 );
 
@@ -67,7 +66,7 @@ gulp.task('assets-sass', ['scss-lint'], function() {
     .pipe(plumber.stop())
     .pipe(
       gulpif(argv.production,
-        gulp.dest(config.paths.prod + config.sass.dest), // Run Porduction Options
+        gulp.dest(config.paths.build + config.sass.dest), // Run Porduction Options
         gulp.dest(config.paths.dev + config.sass.dest)   // Run Development Options
     ))
     .pipe(gulpif(argv.development, reload({stream: true})))
@@ -97,7 +96,7 @@ gulp.task('assets-coffee', function() {
     .pipe(plumber.stop())
     .pipe(
       gulpif(argv.production,
-        gulp.dest(config.paths.prod + config.coffee.dest), // Run Porduction Options
+        gulp.dest(config.paths.build + config.coffee.dest), // Run Porduction Options
         gulp.dest(config.paths.dev + config.coffee.dest)   // Run Development Options
     ))
     .pipe(gulpif(argv.development, reload({stream: true})))
@@ -122,7 +121,7 @@ gulp.task('assets-jade', function() {
     .pipe(plumber.stop())
     .pipe(
       gulpif(argv.production,
-        gulp.dest(config.paths.prod + config.jade.dest), // Run Porduction Options
+        gulp.dest(config.paths.build + config.jade.dest), // Run Porduction Options
         gulp.dest(config.paths.dev + config.jade.dest)   // Run Development Options
     ))
     .pipe(gulpif(argv.development, reload({stream: true})))
@@ -133,17 +132,17 @@ gulp.task('assets-imgs', function() {
   return gulp.src([config.paths.imgs])
     .pipe(
       gulpif(argv.production,
-        gulp.dest(config.paths.prod + '/assets/imgs'), // Run Porduction Options
+        gulp.dest(config.paths.build + '/assets/imgs'), // Run Porduction Options
         gulp.dest(config.paths.dev + '/assets/imgs')   // Run Development Options
     ));
 });
 
 gulp.task('assets-revision', function() {
-  var revAll = new RevAll();
+  var revAll = new RevAll(config.revision);
 
   return gulp.src(config.paths.prod + '/**')
     .pipe(revAll.revision())
-    .pipe(gulp.dest('cdn'));
+    .pipe(gulp.dest('deploy'));
 })
 
 
