@@ -6,74 +6,96 @@
 
 h1.section-title#typography Typography
 
-h4#typography-titles Titles
+.row
+  .col.m50
 
-h1 Title h1
-h2 Title h2
-h3 Title h3
-h4 Title h4
-h5 Title h5
-h6 Title h6
+    h4#typography-titles Titles
 
-hr
+    h1 Title h1
+    h2 Title h2
+    h3 Title h3
+    h4 Title h4
+    h5 Title h5
+    h6 Title h6
 
-h4#typography-paragraphs Paragraphs
+  .col.m50
 
-p <strong>LOREM IPSUM DOLOR SIT AMET</strong>, consectetur adipisicing elit. Consequatur a, ullam, voluptatum incidunt neque doloremque vel inventore distinctio laudantium harum illo quam nulla dolor alias iure impedit! Accusamus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, a, ullam, voluptatum incidunt neque porro numquam doloremque vel inventore distinctio laudantium harum illo quam nulla dolor alias iure impedit.
-p
-  em Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae soluta, iusto facilis impedit veniam consectetur inventore laboriosam nihil? Ad, veniam. Iusto, itaque quas, pariatur repellat voluptatibus omnis ducimus animi culpa.
-  a(href="javascript:void(0)") Read more
+    h4#typography-paragraphs Paragraphs
 
-hr
-
-h4#typography-code Using Code
-
-p.example Example:
-
-code &lt;code&gt;javascript:void(0)&lt;/code&gt;
-
-pre: code.
-  &lt;!-- Structure of a pre code block like this one --&gt;
-  &lt;pre&gt;
-    &lt;code&gt;
-      &lt;button data-ui-component="modal"&gt;Show a Modal on Click&lt;button&gt;
-      &lt;p&gt;All the JS actions are triggered using data bindings&lt;p&gt;
-    &lt;/code&gt;
-  &lt;/pre&gt;
+    p <strong>LOREM IPSUM DOLOR SIT AMET</strong>, consectetur adipisicing elit. Consequatur a, ullam, voluptatum incidunt neque doloremque vel inventore distinctio laudantium harum illo quam nulla dolor alias iure impedit! Accusamus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, a, ullam, voluptatum incidunt neque porro numquam doloremque vel inventore distinctio laudantium harum illo quam nulla dolor alias iure impedit.
+    p
+      em Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae soluta, iusto facilis impedit veniam consectetur inventore laboriosam nihil? Ad, veniam. Iusto, itaque quas, pariatur repellat voluptatibus omnis ducimus animi culpa.
+      a(href="javascript:void(0)") Read more
 
 hr
 
-h4#typography-helpers Helper classes
-p You can use some helper classes for getting some text effects if you need them but don't want to add extra css to your stylesheet.
-p.example Examples:
+.row
+  .col.m50
+    h4#typography-code Using Code
 
-p.ta-left This Text aligns left and is the default behaviour
-pre: code.html.
-  &lt;p class="ta-left"&gt;...&lt;p&gt;
+    p There are two ways of showing code. It can be done using in line code blocks
 
-p.ta-center This Text aligns centered
-pre: code.html.
-  &lt;p class="ta-center"&gt;...&lt;p&gt;
+    p.example Example:
 
-p.ta-right This Text aligns right
-pre: code.html.
-  &lt;p class="ta-right"&gt;...&lt;p&gt;
+    code &lt;code&gt;javascript:void(0)&lt;/code&gt;
 
-p.text-italic This Text is italic
-pre: code.html.
-  &lt;p class="text-italic"&gt;...&lt;p&gt;
+  .col.m50
 
-p.text-bold This Text is bold
-pre: code.html.
-  &lt;p class="text-bold"&gt;...&lt;p&gt;
+    p ... or larger code blocks.
 
-p.text-underline This Text is underlined
-pre: code.html.
-  &lt;p class="text-underline"&gt;...&lt;p&gt;
+    p.example Example:
 
-p.text-slash This Text is slashed through
-pre: code.html.
-  &lt;p class="text-slash"&gt;...&lt;p&gt;
+    pre: code.
+      &lt;!-- Structure of a pre code block like this one --&gt;
+      &lt;pre&gt;
+        &lt;code&gt;
+          &lt;button data-ui-component="modal"&gt;Show a Modal on Click&lt;/button&gt;
+          &lt;p&gt;All the JS actions are triggered using data bindings&lt;/p&gt;
+        &lt;/code&gt;
+      &lt;/pre&gt;
+
+hr
+
+.row
+  .col.xs100
+    h4#typography-helpers Helper classes
+
+    .col.m50.-cling
+      p You can use some helper classes for getting some text effects if you need them but don't want to add extra css to your stylesheet.
+
+    p.example Examples:
+
+  .col.m50
+
+    p.ta-left This Text aligns left and is the default behaviour
+    pre: code.html.
+      &lt;p class="ta-left"&gt;...&lt;p&gt;
+
+    p.ta-center This Text aligns centered
+    pre: code.html.
+      &lt;p class="ta-center"&gt;...&lt;p&gt;
+
+    p.ta-right This Text aligns right
+    pre: code.html.
+      &lt;p class="ta-right"&gt;...&lt;p&gt;
+
+  .col.m50
+
+    p.text-italic This Text is italic
+    pre: code.html.
+      &lt;p class="text-italic"&gt;...&lt;p&gt;
+
+    p.text-bold This Text is bold
+    pre: code.html.
+      &lt;p class="text-bold"&gt;...&lt;p&gt;
+
+    p.text-underline This Text is underlined
+    pre: code.html.
+      &lt;p class="text-underline"&gt;...&lt;p&gt;
+
+    p.text-slash This Text is slashed through
+    pre: code.html.
+      &lt;p class="text-slash"&gt;...&lt;p&gt;
 
 
 

@@ -1,175 +1,277 @@
-h1.section-title Forms
+h1.section-title#forms Forms
 
-p Forms are important.
+.row
+  .col.m50
 
-pre: code.
-  &lt;!-- Basic Form Element Markup --&gt;
-  &lt;label class="label" for="name"&gt;
-    &lt;span class="label_title"&gt;Whats your name?&lt;/span&gt;
-    &lt;input type="text" name="name" id="name" /&gt;
-  &lt;/label&gt;
+    p.
+      I guess we all agree that forms are important to almost any website. RIG provides a general base styling for various form elements and a way on how to tackling all the different requirements of different input types.
+      <br>
+      It's important that input elements are predictable by the user and also predictable for the developer. Following codesnippets will show you how to do it.
 
-p Building some Form examples
+  .col.m50
+    p.example Example:
 
-form.form
-  .grid
-    .row
-      .col.m75.l50
-        label.label(for="name")
-          span.label_title Please enter your name
-          input#name(type="text", name="name")
-      .col.m75.l50
-        label.label(for="email")
-          span.label_title Please enter your Email Address
-          input#email(type="email", name="email")
-      .col.m75.l50
-        label.label(for="country")
-          span.label_title Please enter your Email Address
-          select(name="country")
-            option(value="DiscWorld") Disc World
-            option(value="Narnia") Narnia
-            option(value="MiddleEarth") Middle Earth
-      .col.m75.l50
-        label.label(for="body")
-          span.label_title Leave us a Message (Autogrowing)
-          textarea(name="body", rows="10", data-rig-ui-textarea="autogrow")
-    .row
-      .col
-        h3 Checkbox and Radio Button Interactions
+    pre: code.
+      &lt;!-- Basic Form Element Markup --&gt;
+      &lt;label class="label" for="name"&gt;
+        &lt;span class="label_title"&gt;Whats your name?&lt;/span&gt;
+        &lt;input type="text" name="name" id="name" /&gt;
+      &lt;/label&gt;
 
-        label.label.-checkbox
+hr
+
+.row
+  .col
+    h3 Example Form
+
+  .col.m50
+
+    form.form
+      label.label(for="name")
+        span.label_title Please enter your name
+        input#name(type="text", name="name")
+      label.label(for="email")
+        span.label_title Please enter your Email Address
+        input#email(type="email", name="email")
+      label.label(for="hear")
+        span.label_title How did you hear from us ?
+        select(name="hear")
+          option(value="friends") Friends
+          option(value="google") Google Ads
+          option(value="other") Other
+      label.label(for="body")
+        span.label_title Anything we should know ?
+        textarea(name="body", rows="10")
+      label.label.-checkbox
+          input(type="checkbox")
+          span.label_title I accept everything
+
+  .col.m50
+    pre: code.
+      &lt;!-- Newsletter Form --&gt;
+      &lt;form class="form"&gt;
+
+        &lt;label class="label" for="name"&gt;
+          &lt;span class="label_title"&gt;Please enter your name&lt;/span&gt;
+          &lt;input type="text" name="name" id="name" /&gt;
+        &lt;/label&gt;
+
+        &lt;label class="label" for="email"&gt;
+          &lt;span class="label_title"&gt;Please enter your email address&lt;/span&gt;
+          &lt;input type="text" name="email" id="email" /&gt;
+        &lt;/label&gt;
+
+        &lt;label class="label" for="hear"&gt;
+          &lt;span class="label_title"&gt;How did you hear from us ?&lt;/span&gt;
+          &lt;select name="hear"&gt;
+            &lt;option value="friends"&gt;Friends&lt;/option&gt;
+            &lt;option value="google"&gt;Google Ads&lt;/option&gt;
+            &lt;option value="other"&gt;Other&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/label&gt;
+
+        &lt;label for="body" class="label"&gt;
+          &lt;span class="label_title"&gt;Anything we should know ?&lt;/span&gt;
+          &lt;textarea name="body" rows="10"&gt;&lt;/textarea&gt;
+        &lt;/label&gt;
+
+        &lt;label class="label -checkbox" for="terms"&gt;
+          &lt;input type="checkbox" name="terms" id="terms" /&gt;
+          &lt;span class="label_title"&gt;I accept everything?&lt;/span&gt;
+        &lt;/label&gt;
+
+      &lt;/form&gt;
+
+hr
+
+.row
+  .col
+    h3 Checkbox and Radio Buttons
+
+  .row
+    .col.m50
+      label.label.-checkbox
           input(type="checkbox")
           span.label_title Checkbox Example
+    .col.m50
+      pre: code.
+        &lt;!-- Simple checkbox structure --&gt;
+        &lt;label class="label -checkbox" for="subscribe"&gt;
+          &lt;input type="checkbox" name="subscribe" id="subscribe" /&gt;
+          &lt;span class="label_title"&gt;Do you want to subscribe?&lt;/span&gt;
+        &lt;/label&gt;
+  .row
+    .col.m50
+      .radiogroup
+        label.label.-radio
+          input(type="radio", name="language")
+          span.label_title JavaScript
 
-        pre: code.
-          &lt;!-- Simple checkbox structure --&gt;
-          &lt;label class="label -checkbox" for="subscribe"&gt;
-            &lt;input type="checkbox" name="subscribe" id="subscribe" /&gt;
-            &lt;span class="label_title"&gt;Do you want to subscribe?&lt;/span&gt;
+        label.label.-radio
+          input(type="radio", name="language")
+          span.label_title Ruby
+
+        label.label.-radio
+          input(type="radio", name="language")
+          span.label_title PHP
+
+        label.label.-radio
+          input(type="radio", name="language")
+          span.label_title Python
+    .col.m50
+      pre: code.
+        &lt;!-- Create a vertical Radiogroup --&gt;
+        &lt;div class="radiogroup"&gt;
+
+          &lt;label class="label -radio" for="language"&gt;
+            &lt;input type="radio" name="language" /&gt;
+            &lt;span class="label_title"&gt;JavaScript&lt;/span&gt;
           &lt;/label&gt;
 
-        .radiogroup
-          label.label.-radio
-            input(type="radio", name="language")
-            span.label_title JavaScript
+          &lt;label class="label -radio" for="language"&gt;
+            &lt;input type="radio" name="language" /&gt;
+            &lt;span class="label_title"&gt;Ruby&lt;/span&gt;
+          &lt;/label&gt;
 
-          label.label.-radio
-            input(type="radio", name="language")
-            span.label_title Ruby
+          &lt;label class="label -radio" for="language"&gt;
+            &lt;input type="radio" name="language" /&gt;
+            &lt;span class="label_title"&gt;PHP&lt;/span&gt;
+          &lt;/label&gt;
 
-          label.label.-radio
-            input(type="radio", name="language")
-            span.label_title PHP
+          &lt;label class="label -radio" for="language"&gt;
+            &lt;input type="radio" name="language" /&gt;
+            &lt;span class="label_title"&gt;Python&lt;/span&gt;
+          &lt;/label&gt;
 
-          label.label.-radio
-            input(type="radio", name="language")
-            span.label_title Python
+        &lt;/div&gt;
 
-        pre: code.
-          &lt;!-- Create a vertical Radiogroup --&gt;
-          &lt;div class="radiogroup"&gt;
+  .row
+    .col.m50
+      p You could actually make the radiogroup horizontal and responsive by using the built in grid system.
 
-            &lt;label class="label -radio" for="language"&gt;
-              &lt;input type="radio" name="language" /&gt;
-              &lt;span class="label_title"&gt;JavaScript&lt;/span&gt;
-            &lt;/label&gt;
+      .radiogroup.-horizontal.row
 
-            &lt;label class="label -radio" for="language"&gt;
-              &lt;input type="radio" name="language" /&gt;
-              &lt;span class="label_title"&gt;JavaScript&lt;/span&gt;
-            &lt;/label&gt;
+        label.label.-radio.col.xs50.s25
+          input(type="radio", name="language")
+          span.label_title JavaScript
 
+        label.label.-radio.col.xs50.s25
+          input(type="radio", name="language")
+          span.label_title Ruby
+
+        label.label.-radio.col.xs50.s25
+          input(type="radio", name="language")
+          span.label_title PHP
+
+        label.label.-radio.col.xs50.s25
+          input(type="radio", name="language")
+          span.label_title Python
+
+    .col.m50
+      pre: code.
+        &lt;!-- Create a horizontal Radiogroup using the grid system --&gt;
+        &lt;div class="radiogroup -horizontal row"&gt;
+
+          &lt;label class="label -radio col xs50 s25" for="language"&gt;
+            &lt;input type="radio" name="language" /&gt;
+            &lt;span class="label_title"&gt;JavaScript&lt;/span&gt;
+          &lt;/label&gt;
+
+          &lt;label class="label -radio col xs50 s25" for="language"&gt;
+            &lt;input type="radio" name="language" /&gt;
+            &lt;span class="label_title"&gt;Ruby&lt;/span&gt;
+          &lt;/label&gt;
+
+          &lt;label class="label -radio col xs50 s25" for="language"&gt;
+            &lt;input type="radio" name="language" /&gt;
+            &lt;span class="label_title"&gt;PHP&lt;/span&gt;
+          &lt;/label&gt;
+
+          &lt;label class="label -radio col xs50 s25" for="language"&gt;
+            &lt;input type="radio" name="language" /&gt;
+            &lt;span class="label_title"&gt;Python&lt;/span&gt;
+          &lt;/label&gt;
+
+        &lt;/div&gt;
+
+hr
+
+.row
+  .col
+    h3 Switches
+  .col.m50
+    p Switches are now well known interaction elements that can be tricky. The approach in RIG provides two types of switches and they are completly html5 and css based. No JavaScript is needed for this.
+
+  .row
+    .col.m50
+      h4 Radio Group Switch
+      .label
+        span.label_title How often should we send you emails ?
+        .switchbutton.-radio
+          label.label.-on(for="powerswitch-on") Daily
+          input.on(type="radio" name="powerswitch" id="powerswitch-on")
+          label.label.-off(for="powerswitch-off") Weekly
+          input.off(type="radio" name="powerswitch" id="powerswitch-off")
+          .switchbutton_base
+          .switchbutton_marker
+
+      pre: code.
+        &lt;!-- Radio Switch --&gt;
+        &lt;div class="label"&gt;
+          &lt;span class="label_title"&gt;How often should we send you emails ?&lt;/span&gt;
+          &lt;div class="switchbutton -radio"&gt;
+            &lt;label for="powerswitch-on" class="label -on"&gt;Daily&lt;/label&gt;
+            &lt;input type="radio" name="powerswitch" id="powerswitch-on" class="on"&gt;
+            &lt;label for="powerswitch-off" class="label -off"&gt;Weekly&lt;/label&gt;
+            &lt;input type="radio" name="powerswitch" id="powerswitch-off" class="off"&gt;
+            &lt;div class="switchbutton_base"&gt;&lt;/div&gt;
+            &lt;div class="switchbutton_marker"&gt;&lt;/div&gt;
           &lt;/div&gt;
+        &lt;/div&gt;
 
-      .col
-        p You could actually make the radiogroup horizontal and responsive by using the built in grid system.
+    .col.m50
+      h4 Checkbox Switch
+      .label
+        span.label_title Should your email address be public ?
+        .switchbutton.-checkbox
+          label.label.-on(for="checky") No
+          label.label.-off(for="checky") Yes
+          input(type="checkbox" name="value" id="checky")
+          .switchbutton_base
+          .switchbutton_marker
 
-        h3 How would you rate this framework ?
-        .radiogroup.-horizontal.row
-          label.label.-radio.col.xs50.s20(for="rate-notgood")
-            input(type="radio", name="rate", id="rate-notgood")
-            span.label_title Not Good
-
-          label.label.-radio.col.xs50.s20(for="rate-okayish")
-            input(type="radio", name="rate", id="rate-okayish")
-            span.label_title Okay-ish
-
-          label.label.-radio.col.xs50.s20(for="rate-okay")
-            input(type="radio", name="rate", id="rate-okay")
-            span.label_title Okay
-
-          label.label.-radio.col.xs50.s20(for="rate-good")
-            input(type="radio", name="rate", id="rate-good")
-            span.label_title Good
-
-          label.label.-radio.col.xs50.s20(for="rate-unicorn")
-            input(type="radio", name="rate", id="rate-unicorn")
-            span.label_title Like a Unicorn
-
-        pre: code.
-          &lt;!-- Create a horizontal Radiogroup using the grid system --&gt;
-          &lt;div class="radiogroup -horizontal row"&gt;
-
-            &lt;label class="label -radio col s50" for="language"&gt;
-              &lt;input type="radio" name="language" /&gt;
-              &lt;span class="label_title"&gt;JavaScript&lt;/span&gt;
-            &lt;/label&gt;
-
-            &lt;label class="label -radio col s50" for="language"&gt;
-              &lt;input type="radio" name="language" /&gt;
-              &lt;span class="label_title"&gt;JavaScript&lt;/span&gt;
-            &lt;/label&gt;
-
+      pre: code.
+        &lt;!-- Checkbox Switch --&gt;
+        &lt;div class="label"&gt;
+          &lt;span class="label_title"&gt;Send me Spam Mails&lt;/span&gt;
+          &lt;div class="switchbutton -checkbox"&gt;
+            &lt;label for="checky" class="label -on"&gt;No&lt;/label&gt;
+            &lt;label for="checky" class="label -off"&gt;Yes&lt;/label&gt;
+            &lt;input type="checkbox" name="value" id="checky"&gt;
+            &lt;div class="switchbutton_base"&gt;&lt;/div&gt;
+            &lt;div class="switchbutton_marker"&gt;&lt;/div&gt;
           &lt;/div&gt;
+        &lt;/div&gt;
 
-      hr
+    hr
 
-      .col
-        h3 Switches
+    .col
+      h3 Buttons
 
-      .col.m50
-        h4 Radio Group Switch
-        .label
-          span.label_title Receive Mails
-          .switchbutton.-radio
-            label.label.-on(for="powerswitch-on") Daily
-            input.on(type="radio" name="powerswitch" id="powerswitch-on")
-            label.label.-off(for="powerswitch-off") Weekly
-            input.off(type="radio" name="powerswitch" id="powerswitch-off")
-            .switchbutton_base
-            .switchbutton_marker
+    .col
+      button.btn(type="submit") Submit Button
 
+      button.btn Some Button
 
-      .col.m50
-        h4 Checkbox Switch
-        .label
-          span.label_title Send me Spam Mails
-          .switchbutton.-checkbox
-            label.label.-on(for="checky") No
-            label.label.-off(for="checky") Yes
-            input(type="checkbox" name="value" id="checky")
-            .switchbutton_base
-            .switchbutton_marker
+      .btnGroup
+        button.btn Left
+        button.btn Right
 
-      hr
+      .btnGroup
+        button.btn Left
+        button.btn Middle
+        button.btn Right
 
-      .col
-        h3 Buttons
-
-      .col
+      .btnGroup
         button.btn(type="submit") Submit Button
-
-        button.btn Some Button
-
-        .btnGroup
-          button.btn Left
-          button.btn Right
-
-        .btnGroup
-          button.btn Left
-          button.btn Middle
-          button.btn Right
-
-        .btnGroup
-          button.btn(type="submit") Submit Button
-          a.btn(type="cancel", href="#cancelForm") Cancel
+        a.btn(type="cancel", href="#cancelForm") Cancel

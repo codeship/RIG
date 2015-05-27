@@ -9,7 +9,6 @@ select {
   font-size: 1rem;
   border: 1px solid color('input', 'border');
   border-radius: $base-border-radius;
-  margin-bottom: $base-padding;
   box-sizing: border-box;
   transition: border 200ms;
 }
@@ -85,20 +84,8 @@ textarea { // scss-lint:disable QualifyingElement
 .label.-radio {
   padding-left: 1.5em;
   cursor: pointer;
+  user-select: none;
 
-  > .label_title {
-    // Show an indicator if inactive
-  }
-
-  &:hover {
-    // scss-lint:disable QualifyingElement
-    input[type="checkbox"],
-    input[type="radio"] {
-      box-shadow: 0 0 0 2px color('anchor');
-    }
-  }
-
-  // scss-lint:disable QualifyingElement
   input[type="checkbox"],
   input[type="radio"] {
     position: absolute;
@@ -107,14 +94,6 @@ textarea { // scss-lint:disable QualifyingElement
     left: 0;
     margin: 0;
     transform: translateY(-50%);
-
-    &:checked {
-      background-color: color('anchor');
-
-      + .label_title::before {
-        // Show an indicator if active
-      }
-    }
   }
 }
 

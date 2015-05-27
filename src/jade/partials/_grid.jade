@@ -1,137 +1,190 @@
+// =======================================
+// GRID
+// Explanation and demonstration of the Grid system that fuels RIG
+// =======================================
+
+
 h1.section-title#grid Grid System
 
-p.
-  One important element when building a modern webpage is nearly always a grid system.
-  <br>
-  The grid provided by RIG is rercentage based and available are all 5% steps from 5 - 100%. This should make calculations easy and intuitive. If you want to use columns divided by 3 you can use 33% and 66%.
-  <br>
-  Instead of a 12 or 16 col layout this grid system should provde you maximum flexibility for what you may want to achive.
-  Of course it is built <strong>mobile first</strong>
+.row
+  .col.m50
+    p.
+      One important element when building a modern webpage is nearly always a grid system.
+      <br>
+      The grid provided by RIG is rercentage based and available are all 5% steps from 5 - 100%. This should make calculations easy and intuitive. If you want to use columns divided by 3 you can use 33% and 66%.
+      <br>
+      Instead of a 12 or 16 col layout this grid system should provde you maximum flexibility for what you may want to achive.
+      Of course it is built <strong>mobile first</strong>
 
-.grid.grid-presentation
-  .row: .col.s5 5
-  .row: .col.s10 10
-  .row: .col.s15 15
-  .row: .col.s20 20
-  .row: .col.s25 25
-  .row: .col.s30 30
-  .row: .col.s33 33
-  .row: .col.s35 35
-  .row: .col.s40 40
-  .row: .col.s45 45
-  .row: .col.s50 50
-  .row: .col.s55 55
-  .row: .col.s60 60
-  .row: .col.s65 65
-  .row: .col.s66 66
-  .row: .col.s70 70
-  .row: .col.s75 75
-  .row: .col.s80 80
-  .row: .col.s85 85
-  .row: .col.s90 90
-  .row: .col.s95 95
-  .row: .col.s100 100
+.row
+  .col.xs100
+    .grid-presentation
+      .row: .col.s5 5
+      .row: .col.s10 10
+      .row: .col.s15 15
+      .row: .col.s20 20
+      .row: .col.s25 25
+      .row: .col.s30 30
+      .row: .col.s33 33
+      .row: .col.s35 35
+      .row: .col.s40 40
+      .row: .col.s45 45
+      .row: .col.s50 50
+      .row: .col.s55 55
+      .row: .col.s60 60
+      .row: .col.s65 65
+      .row: .col.s66 66
+      .row: .col.s70 70
+      .row: .col.s75 75
+      .row: .col.s80 80
+      .row: .col.s85 85
+      .row: .col.s90 90
+      .row: .col.s95 95
+      .row: .col.s100 100
 
+.row
+  .col.m50
 
-p Columns are hosted in rows and are fully responsive if you want them to. By default RIG provides breakpoints for:
-ul
-  li extra small screens - prefixed with <strong>xs</strong>
-  li small screens - prefixed with <strong>s</strong>
-  li medium screens - prefixed with <strong>m</strong>
-  li large screens - prefixed with <strong>l</strong>
+    p Columns are hosted in rows and are fully responsive if you want them to. By default RIG provides breakpoints for:
 
-p All those definitions of course are counting up to larger screens. So if you define a small screen to use 50% columns, they will also be 50% for medium and large screens unless you define something else.
-p So the basic structre of a grid could look something like this:
+    ul
+      li extra small screens - prefixed with <strong>xs (400px)</strong>
+      li small screens - prefixed with <strong>s (600px)</strong>
+      li medium screens - prefixed with <strong>m (900px)</strong>
+      li large screens - prefixed with <strong>l (1100px)</strong>
 
-pre: code.
-  &lt;!-- Basic Grid Structure --&gt;
-  &lt;div class="grid"&gt;
-    &lt;div class="row"&gt;
-      &lt;div class="col s50 m25 l20"&gt;
-        ...
+    p All those definitions of course are counting up to larger screens. So if you define a small screen to use 50% columns, they will also be 50% for medium and large screens unless you define something else.
+
+  .col.m50
+    p Following codeblock will show the basic structure of the grid.
+    p.example Example:
+
+    pre: code.
+      &lt;!-- Basic Grid Structure --&gt;
+      &lt;div class="grid"&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col s50 m25 l20"&gt;
+            ...
+          &lt;/div&gt;
+          ...
+        &lt;/div&gt;
       &lt;/div&gt;
-      ...
-    &lt;/div&gt;
-  &lt;/div&gt;
 
-p The following Section will host some other examples for you that show what classes are set as text.
+hr
 
-p.example Example:
+.row
+  .col.m50
 
-.grid.grid-presentation
-  .row
-    .col.s50.m25.l20
-      p .col.s50.m25.l20
-    .col.s50.m25.l20
-      p .col.s50.m25.l20
-    .col.s50.m25.l20
-      p .col.s50.m25.l20
-    .col.s50.m25.l20
-      p .col.s50.m25.l20
-    .col.s50.m25.l20
-      p .col.s50.m25.l20
+    h4#grid-examples Various Grid Usage Examples
 
-p.example Example:
-p.
-  You can also nest grids in each other. Be sure to use <code>.row</code> Elements for generating a clean and semantic structure.
-  Also you can use the <code>-cling</code> class on elements if you don't want to have a padding on those columns
+    p Further on you'll find some examples on how to use the grid and created various layouts.
 
+    p.example Example:
 
-.grid.grid-presentation
-  .row
-    .col
+  .col.xs100
+
+    .grid-presentation
       .row
-        .col.s50.m50
-          p .col.s50.m50
+        .col.s50.m25.l20
+          p .col.s50.m25.l20
+        .col.s50.m25.l20
+          p .col.s50.m25.l20
+        .col.s50.m25.l20
+          p .col.s50.m25.l20
+        .col.s50.m25.l20
+          p .col.s50.m25.l20
+        .col.s50.m25.l20
+          p .col.s50.m25.l20
+
+  .col.m50
+    p.
+      You can also nest grids in each other. Be sure to use <code>.row</code> Elements for generating a clean and semantic structure.
+      Also you can use the <code>-cling</code> class on elements if you don't want to have a padding on those columns
+
+    p.example Example:
+
+  .col.xs100
+
+    .grid-presentation
+      .row
+        .col
           .row
-            .col.m50
-              p .col.m50
-            .col.m50
-              p .col.m50
-        .col.s50.m50
-          p .col.s50.m50
+            .col.s50.m50
+              p .col.s50.m50
+              .row
+                .col.m50
+                  p .col.m50
+                .col.m50
+                  p .col.m50
+            .col.s50.m50
+              p .col.s50.m50
+              .row
+                .col.m50
+                  p .col.m50
+                .col.m50
+                  p .col.m50
+
+  .col.m50
+    p.
+      Lets create a more complex example where we want to have 6 columns on large screens. For achiving this you would need to wrap 50% cols into three 33% cols.
+
+  .col.xs100
+    .grid-presentation
+      .row
+        .col.s33.-cling
           .row
-            .col.m50
-              p .col.m50
-            .col.m50
-              p .col.m50
+            .col.l50
+              p .col.l50
+            .col.l50
+              p .col.l50
+        .col.s33.-cling
+          .row
+            .col.l50
+              p .col.l50
+            .col.l50
+              p .col.l50
+        .col.s33.-cling
+          .row
+            .col.l50
+              p .col.l50
+            .col.l50
+              p .col.l50
 
-p.example Example:
-p.
-  Lets create a more complex example where we want to have 6 columns on large screens. For achiving this you would need to wrap 50% cols into three 33% cols.
+  .col.m50
+    p.
+      You can also use special helper classes for addeding spaces around certain columns by using helper classes like <code>.m-offset10</code> or <code>.m-tail10</code>
 
-.grid.grid-presentation
-  .row
-    .col.s33.-cling
+    p.example Example:
+
+  .col.xs100
+
+    .grid-presentation
       .row
-        .col.l50
-          p .col.l50
-        .col.l50
-          p .col.l50
-    .col.s33.-cling
+        .col.s70.s-offset15.m50.m-offset25
+          p .col.s70.s-offset15.m50.m-offset25
+
+    .grid-presentation
       .row
-        .col.l50
-          p .col.l50
-        .col.l50
-          p .col.l50
-    .col.s33.-cling
+        .col.s50.s-tail10
+          p .col.s50.s-tail10
+        .col.s40
+          p .col.s40
+
+  .col.m50
+    p.
+      Another helper class allows you to strip away the padding on either or both sides of the column.
+
+    p.example Example:
+
+  .col
+
+    .grid-presentation
       .row
-        .col.l50
-          p .col.l50
-        .col.l50
-          p .col.l50
+        .col.-cling
+          p .col.-cling
+        .col.-clingLeft
+          p .col.-clingLeft
+        .col.-clingRight
+          p .col.-clingRight
 
-p.example Example:
-p Using Tail and Offset for handling spaces between you columns
 
-.grid.grid-presentation
-  .row
-    .col.s70.s-offset15.m50.m-offset25
-      p .col.s70.s-offset15.m50.m-offset25
-
-.grid.grid-presentation
-  .row
-    .col.s50.s-tail10
-      p .col.s50.s-tail10
-    .col.s40
-      p .col.s40

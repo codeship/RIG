@@ -30,7 +30,7 @@ html(lang="en")
 
     //- Example menu left offcanvas and horizontal
     button.flexMenuToggleButton.-right(data-rig-flexmenu-element="toggle"): span.icon.fa.fa-bars
-    .flexMenu.-left(data-rig-ui-menu="horizontal" data-rig-flexmenu-element="menu")
+    .flexMenu.-left.-sticky(data-rig-ui-menu="horizontal" data-rig-flexmenu-element="menu")
       nav.flexMenu_nav
         .flexMenu_block.-left.-logo
           a(href="/"): h2 R
@@ -46,28 +46,27 @@ html(lang="en")
         span.version 2.0
 
     .container
-      .grid: .row
-        .col.m60.m-offset20
-          h2 An aesthetically unopinionated CSS Framework
-          span.byCodeship by Codeship
-          p.
-            This project was created out of the frustration in working with so many other CSS frameworks. Of course every framework has it's good and bad parts. This framework is the try to leverage those good parts on a very fundamental level. <br>
-            The main concept behind RIG is simplicity and to just provide as much as you actually need without putting you on the spot for adopting a certain <em>look & feel</em> that many frameworks bring along.
-          p.
-            Even for this early stage I started using RIG on various projects and threw various challenges at it where I was pretty happy with the result. Of course this is not finished yet in total but give it a try and help make it even better :)
-          p
-            | Best,
-            br
+      .grid
+        .row
+          .col.m50.m-offset20
+            h2 An aesthetically unopinionated CSS Framework
+            span.byCodeship by Codeship
+            p.
+              This project was created out of the frustration in working with so many other CSS frameworks. Of course every framework has it's good and bad parts. This framework is the try to leverage those good parts on a very fundamental level. <br>
+              The main concept behind RIG is simplicity and to just provide as much as you actually need without putting you on the spot for adopting a certain <em>look & feel</em> that many frameworks bring along.
+            p.
+              Even for this early stage I started using RIG on various projects and threw various challenges at it where I was pretty happy with the result. Of course this is not finished yet in total but give it a try and help make it even better :)
+            p Best,
             a(href="https://twitter.com/Codebryo"): em Roman Kuba
 
+            hr
 
-          hr
+            include ./partials/_toc.jade
 
-          include ./partials/_toc.jade
+        include ./partials/_typography.jade
+        include ./partials/_grid.jade
+        include ./partials/_forms.jade
 
-      include ./partials/_typography.jade
-      include ./partials/_grid.jade
-      include ./partials/_forms.jade
       include ./partials/_menu.jade
 
     footer
