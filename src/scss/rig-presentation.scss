@@ -25,6 +25,8 @@
   text-transform: uppercase;
   padding: .5em 0;
   border-bottom: 1px solid color('body');
+
+  margin-top: 100px;
 }
 
 .flexMenuToggleButton {
@@ -52,6 +54,16 @@
     line-height: 45px;
     margin: 10px;
     text-align: center;
+    transition: border-color 200ms;
+  }
+
+  a:hover {
+    color: #fff;
+    background: #000;
+
+    h2 {
+      border-color: #fff;
+    }
   }
 }
 
@@ -68,6 +80,14 @@
     &.-cling {
       border: 0;
     }
+
+    &.-clingLeft {
+      border-left: 0;
+    }
+
+    &.-clingRight {
+      border-right: 0;
+    }
   }
 }
 
@@ -77,6 +97,10 @@
   background-position: center center;
   height: 80vh;
   position: relative;
+
+  @include larger-than('medium-screen') {
+    margin-top: 60px;
+  }
 
   h1 {
     position: absolute;
