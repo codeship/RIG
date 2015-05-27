@@ -85,9 +85,10 @@ h6,
 }
 
 ul {
-  list-style: none;
+  // list-style: none;
+  list-style-type: square;
   margin: 0;
-  padding: 0;
+  padding: $base-padding/3 0 $base-padding/3 1em;
 }
 
 ol {
@@ -135,9 +136,6 @@ ol {
     }
   }
 }
-
-
-
 
 p {
   font-size: 1rem;
@@ -187,13 +185,12 @@ code {
 
 pre {
   display: block;
-
   padding: 0;
-  overflow-wrap: break-word;
 
   code {
     padding: $base-padding;
-    display: block
+    display: block;
+    overflow-x: auto;
   }
 }
 
