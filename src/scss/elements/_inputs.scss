@@ -157,6 +157,7 @@ $switchbutton-width: 30px;
   position: relative;
 
   font-size: 0;
+  user-select: none;
 
   .label {
     display: inline-block;
