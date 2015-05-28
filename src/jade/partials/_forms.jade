@@ -253,25 +253,70 @@ hr
           &lt;/div&gt;
         &lt;/div&gt;
 
-    hr
+hr
 
-    .col
-      h3 Buttons
+.row
+  .col
+    h3#forms-buttons Buttons
 
-    .col
-      button.btn(type="submit") Submit Button
+    p.
+      Forms of course also need buttons and RIG won't let you hanging in there without providing some default styling. Some buttons by default provide certain colors that can easily be swapped out if needed.
 
-      button.btn Some Button
+  .col.m50
+    p.example Examples:
 
-      .btnGroup
-        button.btn Left
-        button.btn Right
+    button.btn Default Button
+    br
+    button.btn(type="submit") Submit Button
+    br
+    button.btn(type="cancel") Cancel Button
+
+    p.note Here be noted that <code>type="cancel"</code> is no valid html5 attribute but never the less RIG supports it as an easy way for the ease of usage.
+
+  .col.m50
+    pre: code.
+      &lt;!-- Easy Buttons --&gt;
+      &lt;button class="btn"&gt;Default Button&lt;/button&gt;
+
+      &lt;button class="btn" type="submit"&gt;Submit Button&lt;/button&gt;
+
+      &lt;button class="btn" type="cancel"&gt;Cancel Button&lt;/button&gt;
+
+.row
+  .col
+    h3 Button Groups
+
+    p.
+      Also RIG provides you button groups if you need them.
+
+  .row
+    .col.m50
 
       .btnGroup
         button.btn Left
         button.btn Middle
         button.btn Right
 
+    .col.m50
+      pre: code.
+        &lt;!-- Button Group --&gt;
+        &lt;div class="btnGroup"&gt;
+          &lt;button class="btn"&gt;Left&lt;/button&gt;
+          &lt;button class="btn"&gt;Middle&lt;/button&gt;
+          &lt;button class="btn"&gt;Right&lt;/button&gt;
+        &lt;/div&gt;
+
+  .row
+    .col.m50
+
       .btnGroup
         button.btn(type="submit") Submit Button
         a.btn(type="cancel", href="#cancelForm") Cancel
+
+    .col.m50
+      pre: code.
+        &lt;!-- Button Group --&gt;
+        &lt;div class="btnGroup"&gt;
+          &lt;button class="btn" type="submit"&gt;Submit Button&lt;/button&gt;
+          &lt;button class="btn" type="cancel"&gt;Cancel&lt;/button&gt;
+        &lt;/div&gt;

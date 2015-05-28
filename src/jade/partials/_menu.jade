@@ -1,74 +1,91 @@
 h1.section-title#flexmenu FlexMenu
 
-p.
-  Say hello to <em>FlexMenu</em>. One of the view components that RIG brings along but imo it's a crucial one.
-  <br>
-  FlexMenu gives you the possibilitie of having one slick page menu system that switches from an offcanvas menu to a always visible sidebar menu or a horizontal one if you like it to. The Markup behind it is super simple and gives you a ton of flexibility in styling it the way you actually need it.
+.row
+  .col.m50
+    p.
+      Say hello to <em>FlexMenu</em>. One of the view components that RIG brings along but imo it's a crucial one.
+      <br>
+      FlexMenu gives you the possibilitie of having one slick page menu system that switches from an offcanvas menu to a always visible sidebar menu or a horizontal one if you like it to. The Markup behind it is super simple and gives you a ton of flexibility in styling it the way you actually need it.
 
-p.example Example:
-p Let's quickly check out the default Markup for our Flexmenu:
+    p Let's quickly check out the default Markup for our Flexmenu:
 
-pre: code.
-  &lt;button data-rig-flexmenu-element="toggle" class="flexMenuToggleButton -right"&gt;
-    Menu
-  &lt;/button&gt;
-  &lt;div class="flexMenu -left" data-rig-flexmenu-element="menu"&gt;
-    &lt;nav class="flexMenu_nav"&gt;
-      &lt;div class="flexMenu_block"&gt;
-        &lt;!-- Whatever you want in here --&gt;
+  .col.m50
+    pre: code.
+      &lt;button data-rig-flexmenu-element="toggle" class="flexMenuToggleButton -right"&gt;
+        Menu
+      &lt;/button&gt;
+      &lt;div class="flexMenu -left" data-rig-flexmenu-element="menu"&gt;
+        &lt;nav class="flexMenu_nav"&gt;
+          &lt;div class="flexMenu_block"&gt;
+            &lt;!-- Whatever you want in here --&gt;
+          &lt;/div&gt;
+          &lt;!-- Add multiple blocks --&gt;
+        &lt;/nav&gt;
       &lt;/div&gt;
-      &lt;!-- Add multiple blocks --&gt;
-    &lt;/nav&gt;
-  &lt;/div&gt;
 
-h5 What just happend ?
+.row
+  .col
+    h5 What just happend ?
 
-p.
-  That's actually all you need for the basic construct of the flexMenu component. If you checkout the sourcecode example above you may realize that we just introduced two new designer patterns you will find throughout RIG.
-  <br>
-  In general it uses <code>data</code> attributes for hooking certain levels of interactivity onto html elements. The <code>data-rig-flexmenu-element</code> defines two blocks that will be connected using JS. So clicking on a <em>toggle</em> element will actually toggle a class on the <em>menu</em> element.
-p.
-  You may also notice that there are <code>-left</code> and <code>-right</code> classes. Those are used to define where on the page which element should be found. You can of course have both of them on one side or switch them however you like.
-p.
-  Also, the button will be hidden once the menu is always on screen on larger screens.
+  .col.m50
+    p.
+      That's actually all you need for the basic construct of the flexMenu component. If you checkout the sourcecode example above you may realize that we just introduced two new designer patterns you will find throughout RIG.
+      <br>
+      In general it uses <code>data</code> attributes for hooking certain levels of interactivity onto html elements. The <code>data-rig-flexmenu-element</code> defines two blocks that will be connected using JS. So clicking on a <em>toggle</em> element will actually toggle a class on the <em>menu</em> element.
 
-h4#flexmenu-options FlexMenu Options
+  .col.m50
+    p.
+      You may also notice that there are <code>-left</code> and <code>-right</code> classes. Those are used to define where on the page which element should be found. You can of course have both of them on one side or switch them however you like.
+    p.
+      Also, the button will be hidden once the menu is always on screen on larger screens.
 
-p.
-  Let's say you want the FlexMenu to be a horizontal menu on large screens ? For example like the menu behaves on this exact page ? There is only one attribute you would need to add to the menu element and that is <code>data-rig-ui-menu="horizontal"</code>.
-  <br>
-  That hopefully was easy.
+.row
+  .col.m50
+    h4#flexmenu-options FlexMenu Options
 
-p.
-  Also if you want to have your horizontal menu be sticky on top just add the class <code>-sticky</code>
+    p.
+      Let's say you want the FlexMenu to be a horizontal menu on large screens ? For example like the menu behaves on this exact page ? There is only one attribute you would need to add to the menu element and that is <code>data-rig-ui-menu="horizontal"</code>.
+      <br>
+      That hopefully was easy.
 
-h4#flexmenu-elements FlexMenu elements
+    p.
+      Also if you want to have your horizontal menu be sticky on top just add the class <code>-sticky</code>
 
-p.
-  FlexMenu provides some elements you can use to define the positon of certain navigation elements. Some of them like splitting things up into multiple <code>flexMenu_block</code> elements would actually only make sense for the horizontal version. But if you want to rebuild the menu this page has here is the code used:
+  .col.m50
+    h4#flexmenu-elements FlexMenu elements
 
-pre: code.
-  &lt;button data-rig-flexmenu-element="toggle" class="flexMenuToggleButton -right"&gt;
-    Menu
-  &lt;/button&gt;
-  &lt;div data-rig-ui-menu="horizontal" data-rig-flexmenu-element="menu" class="flexMenu -left"&gt;
-    &lt;nav class="flexMenu_nav"&gt;
-      &lt;div class="flexMenu_block -left -logo"&gt;
-        &lt;a href="/"&gt;
-          &lt;!-- Let's use an FontAwesome Icon --&gt;
-          &lt;h2&gt;&lt;span class="icon fa fa-institution"&gt;&lt;/span&gt;&lt;/h2&gt;
-        &lt;/a&gt;
+    p.
+      FlexMenu provides some elements you can use to define the positon of certain navigation elements. Some of them like splitting things up into multiple <code>flexMenu_block</code> elements would actually only make sense for the horizontal version.
+
+.row
+  .col.m50
+    h4 Rebuild the page menu
+
+    p If you want to rebuild the menu this page shows you, here is the code used:
+
+  .col
+    pre: code.
+      &lt;button data-rig-flexmenu-element="toggle" class="flexMenuToggleButton -right"&gt;
+        Menu
+      &lt;/button&gt;
+      &lt;div data-rig-ui-menu="horizontal" data-rig-flexmenu-element="menu" class="flexMenu -left"&gt;
+        &lt;nav class="flexMenu_nav"&gt;
+          &lt;div class="flexMenu_block -left -logo"&gt;
+            &lt;a href="/"&gt;
+              &lt;!-- Let's use an FontAwesome Icon --&gt;
+              &lt;h2&gt;&lt;span class="icon fa fa-institution"&gt;&lt;/span&gt;&lt;/h2&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+          &lt;ul class="flexMenu_block -right"&gt;
+            &lt;li class="flexMenu_block_item"&gt;
+              &lt;a href="#toc"&gt;Table of Contents&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="flexMenu_block_item"&gt;
+              &lt;a href="https://github.com/codeship/RIG" target="_blank"&gt;RIG on Github&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="flexMenu_block_item"&gt;
+              &lt;a href="https://codeship.com" target="_blank"&gt;Codeship&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
       &lt;/div&gt;
-      &lt;ul class="flexMenu_block -right"&gt;
-        &lt;li class="flexMenu_block_item"&gt;
-          &lt;a href="#toc"&gt;Table of Contents&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li class="flexMenu_block_item"&gt;
-          &lt;a href="https://github.com/codeship/RIG" target="_blank"&gt;RIG on Github&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li class="flexMenu_block_item"&gt;
-          &lt;a href="https://codeship.com" target="_blank"&gt;Codeship&lt;/a&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/nav&gt;
-  &lt;/div&gt;
