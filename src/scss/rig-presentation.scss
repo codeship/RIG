@@ -11,7 +11,7 @@
 }
 
 .example {
-  color: rgba(#000, .5);
+  color: rgba(#000, .5); // scss-lint:disable ColorVariable
 }
 
 .byCodeship {
@@ -31,9 +31,9 @@
 
 .flexMenuToggleButton {
   z-index: 1;
-  background: #000;
-  color: #fff;
-  border: 3px solid #fff;
+  background: #000;       // scss-lint:disable ColorVariable
+  color: #fff;            // scss-lint:disable ColorVariable
+  border: 3px solid #fff; // scss-lint:disable ColorVariable
   height: 40px;
   width: 40px;
 
@@ -48,7 +48,7 @@
   }
 
   h2 {
-    border: 3px solid #000;
+    border: 3px solid #000; // scss-lint:disable ColorVariable
     height: 40px;
     width: 40px;
     line-height: 45px;
@@ -58,11 +58,11 @@
   }
 
   a:hover {
-    color: #fff;
-    background: #000;
+    color: #fff;           // scss-lint:disable ColorVariable
+    background: #000;      // scss-lint:disable ColorVariable
 
     h2 {
-      border-color: #fff;
+      border-color: #fff;  // scss-lint:disable ColorVariable
     }
   }
 }
@@ -70,7 +70,7 @@
 // Special Coloring for the GRID Blocks
 .grid-presentation {
   .col {
-    background: #C6E2FF; // scss-lint:disable ColorVariable
+    background: #c6e2ff; // scss-lint:disable ColorVariable
     padding: 0;
     border-left: $base-col-padding solid rgba(#000, .1);
     border-right: $base-col-padding solid rgba(#000, .1);
@@ -93,10 +93,11 @@
 
 // Make a beautiful Titleblock for RIG
 .titleBlock {
-  background-image: url(/assets/imgs/title.jpg);
-  background-position: center center;
-  height: 80vh;
   position: relative;
+
+  height: 80vh;
+  background-image: url('/assets/imgs/title.jpg');
+  background-position: center center;
 
   @include larger-than('medium-screen') {
     margin-top: 60px;
@@ -104,23 +105,25 @@
 
   h1 {
     position: absolute;
-    margin: 0;
+
     top: 50%;
     left: 50%;
-    color: #fff; // scss-lint:disable ColorVariable
-    border: 3px solid #fff; // scss-lint:disable ColorVariable
     height: 100px;
     width: 100px;
+    margin: 0;
+    color: #fff; // scss-lint:disable ColorVariable
+    border: 3px solid #fff; // scss-lint:disable ColorVariable
     line-height: 100px;
     transform: translate(-50%, -50%);
 
     .version {
       position: absolute;
+
+      left: 0;
+      bottom: 5px;
+      width: 100%;
       font-size: .9rem;
       line-height: 1em;
-      bottom: 5px;
-      left: 0;
-      width: 100%;
     }
   }
 }
@@ -128,5 +131,5 @@
 // Footer
 footer {
   border-top: 2px solid rgba(#000, .2); // scss-lint:disable ColorVariable
-  background: #C6E2FF; // scss-lint:disable ColorVariable
+  background: #c6e2ff; // scss-lint:disable ColorVariable
 }
