@@ -27,7 +27,7 @@ $ npm install
 Once everything is installed, go ahead and run gulp from the command line.
 
 ```
-$ gulp build
+$ gulp
 ```
 
-This will build all sass files and output a new file called `rig-latest.css`
+This will build all sass files and output all files in a folder named `dev` by default
