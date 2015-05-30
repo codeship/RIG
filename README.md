@@ -31,3 +31,7 @@ $ gulp
 ```
 
 This will build all sass files and output all files in a folder named `dev` by default
+
+## License
+
+This project is released under the GPL v3 License. Meaning feel free to do with all the source code in here whatever you like and use it also for commercial products.
