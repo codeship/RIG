@@ -20,8 +20,11 @@ html(lang="en")
     //- Yes, it's not optimized yet as this is work in progress and its for now only to GSD :)
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js")
+
     script(src="https://rawgit.com/jevin/Autogrow-Textarea/master/jquery.autogrowtextarea.min.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js")
+    script(src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js")
+    script(src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.ui.min.js")
 
   body
 
@@ -89,8 +92,18 @@ html(lang="en")
               a(href="https://github.com/codeship/RIG" target="_blank") Find RIG on Github
 
     script(src="/assets/js/rig.js" async="true")
-    script(type='text/javascript').
+    script(type="text/javascript").
       hljs.initHighlightingOnLoad();
+
+    script(type="text/javascript").
+      $('a','#toc').on('click', function(e) {
+        var target = $(this).attr('href');
+        $(target).velocity("scroll", { duration: 350, offset: -70 });
+      });
+
+      $('a[href=#toc]').on('click', function(e) {
+        $('#toc').velocity("scroll", { duration: 350, offset: -70 });
+      });
 
     script(type='text/javascript').
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
