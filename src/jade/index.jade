@@ -8,7 +8,7 @@ html(lang="en")
     link(rel="stylesheet" href="/assets/css/rig.css")
 
     //- Extra Styling for the RIG layout page
-    link(rel="stylesheet" href="/assets/css/rig-presentation.css")
+    link(rel="stylesheet" name="presentation" href="/assets/css/rig-presentation.css")
 
     //- Loading Font Awesome
     link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
@@ -39,6 +39,7 @@ html(lang="en")
           a(href="/"): h2 R
         ul.flexMenu_block.-right
           li.flexMenu_block_item: a(href="#toc") Table of Contents
+          li.flexMenu_block_item: a(href="#toggle") Toggle Raw
           li.flexMenu_block_item: a(href="https://github.com/codeship/RIG" target="_blank") RIG on Github
           li.flexMenu_block_item: a(href="https://codeship.com" target="_blank") Codeship
 
@@ -52,15 +53,27 @@ html(lang="en")
       .grid
         .row
           .col.m50.m-offset20
-            h2 An aesthetically unopinionated CSS Framework
-            span.byCodeship by Codeship
-            p.
-              This project was created out of the frustration in working with so many other CSS frameworks. Of course every framework has it's good and bad parts. This framework is the try to leverage those good parts on a very fundamental level. <br>
-              The main concept behind RIG is simplicity and to just provide as much as you actually need without putting you on the spot for adopting a certain <em>look & feel</em> that many frameworks bring along.
-            p.
-              Even for this early stage I started using RIG on various projects and threw various challenges at it where I was pretty happy with the result. Of course this is not finished yet in total but give it a try and help make it even better :)
-            p Best,
-            a(href="https://twitter.com/Codebryo"): em Roman Kuba
+            :markdown
+              ## An aesthetically unopinionated CSS Framework
+              <span class="byCodeship">by Codeship</span>
+
+              Hello and welcome to RIG.
+              You may wonder what it is and why there is the necessity for another CSS Framework.
+
+              This project was created out of the frustration in working with many different CSS frameworks. For me it seemed there are some frameworks that try to do everything and come with everything you could possibly dream off, but visually forcing you in a certain direction.
+              Other frameworks tend to start on a lower level but also ignoring a tons of necessary styilings or ignoring good parts of other frameworks.
+
+              **RIG framework tries to leverage good parts and best practices on a very fundamental level.**
+
+              The main concept behind RIG is *simplicity* and to the aim to provide just as much as you actually need without putting you on the spot for adopting a *look & feel*.
+
+              Even for this early stage I started using RIG on various projects and threw various challenges at it where I was pretty happy with the result. It's not finished yet, but it certainly goes in the right direction and I would be more than happy to get anyones feedback on it.
+
+              Go ahead and check out the [Table of Contents](#toc) and see what this framework has to offer.
+              Also you can click [Toggle Raw](#toggle) (also in the menu) as it will show you this page with pure RIG without the style additions.
+
+              Best, <br>
+              [*Roman Kuba*](https://twitter.com/Codebryo)
 
             hr
 
@@ -96,6 +109,7 @@ html(lang="en")
       hljs.initHighlightingOnLoad();
 
     script(type="text/javascript").
+
       $('a','#toc').on('click', function(e) {
         var target = $(this).attr('href');
         $(target).velocity("scroll", { duration: 350, offset: -70 });
@@ -104,6 +118,23 @@ html(lang="en")
       $('a[href=#toc]').on('click', function(e) {
         $('#toc').velocity("scroll", { duration: 350, offset: -70 });
       });
+
+      $link = $('link[name=presentation]');
+      originalHref = $link.attr('href');
+
+      $('a[href=#toggle]').on('click', function(e) {
+
+        if($link.attr('href') == '') {
+          $link.attr('href', originalHref);
+        }
+        else {
+          $link.attr('href', '');
+        }
+
+      });
+
+
+      console.log($('link[name=presentation]'));
 
     script(type='text/javascript').
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

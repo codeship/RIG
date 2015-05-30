@@ -26,6 +26,7 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "*",
     "gulp-watch": "*",
+    "marked": "^0.3.3",
     "require-dir": "*",
     "yargs": "*"
   },
