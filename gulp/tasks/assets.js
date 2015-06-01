@@ -141,7 +141,7 @@ gulp.task('assets-revision', function() {
   var revAll = new RevAll(config.revision);
 
   return gulp.src(config.paths.build + '/**')
-    .pipe(revAll.revision())
+    // .pipe(revAll.revision())
     .pipe(gulp.dest('deploy'));
 })
 
