@@ -96,7 +96,7 @@
   position: relative;
 
   height: 80vh;
-  background-image: url('/assets/imgs/title.jpg');
+  background-image: url('/assets/imgs/title.jpeg');
   background-position: center center;
 
   @include larger-than('medium-screen') {
@@ -115,6 +115,7 @@
     border: 3px solid #fff; // scss-lint:disable ColorVariable
     line-height: 100px;
     transform: translate(-50%, -50%);
+    background: rgba(#000, .3);
 
     .version {
       position: absolute;

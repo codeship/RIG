@@ -79,8 +79,6 @@
 
   a {
     display: block;
-
-    padding: round($base-padding/4) 0;
   }
 
   // Specail Case of a logo block
@@ -106,10 +104,6 @@
 .flexMenu_block_item {
   display: block;
   position: relative;
-
-  > a {
-    padding: round($base-padding/4) 0;
-  }
 }
 
 // If the menu is not a horizontal one,
@@ -216,6 +210,7 @@
 
     .flexMenu_block_item {
       display: inline-block; // If no Flexbox support
+      padding: 0 $base-padding;
     }
   }
 
@@ -234,7 +229,7 @@
       .flexMenu_block {
         display: flex;
 
-        flex-direction: column;
+        flex-direction: row;
         flex-grow: 1; // Let the Box fill out the rest
         // Align Everything centered on x and y axis
         align-items: center;
@@ -250,7 +245,6 @@
 
       .flexMenu_block_item {
         display: flex;
-        padding: 0 $base-padding;
       }
 
       ul.flexMenu_block {
