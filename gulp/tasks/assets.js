@@ -144,3 +144,4 @@ gulp.task('assets-revision', function() {
     // .pipe(revAll.revision())
     .pipe(gulp.dest('deploy'));
 });
+
