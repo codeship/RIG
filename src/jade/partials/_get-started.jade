@@ -1,0 +1,47 @@
+h1.section-title#get-started Get Started
+
+.row
+  .col.m50
+
+    p.
+      So, you can't wait to get your fingers on RIG and want to have it all. This quickstart guide should help you in getting things running fast and easy.
+      <br>
+      RIG consists of two parts:
+    ul
+      li The CSS File
+      li A complimenting JS File
+
+    p.
+      You can <a href="https://github.com/codeship/RIG/tree/master/releases/v0.2" target="_blank">download both files</a> from the latest release folder in the Github Repository or fetch the source files (in SCSS and CoffeeScript)
+
+  .col.m50
+    p After including the Files in your website all you need to do is instantiate RIG somewhere in your JS Code.
+
+    pre: code.
+      var Rig = new Rig();
+
+hr
+
+.row
+  .col.m50
+
+    h3 Options
+
+    p.
+      You can instantiate RIG with some options so it fits your needs. Please note that currently the options are view as it's still growing but will eventually let you customize RIG even more.
+    p.
+      Following you will see all available options and their default settings. Note that all components like the flexmenu can be turned off if you don't feel like using it.
+
+  .col.m50
+    pre: code.
+      {
+        'debug': false, // will output debug messages
+        'components': {
+          'flexMenu': true,
+          'forms': true,
+          'dropdowns': true
+        }
+      }
+
+    p.
+      You can use <code>Rig.log(...)</code> for printing your own log messages that are only visible when debug mode is acitvated.
