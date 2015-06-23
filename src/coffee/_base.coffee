@@ -12,9 +12,9 @@ class @Rig
     'version': '0.2'
     'debug': false
     'components':
-      'flexMenu': false
-      'forms': false
-      'dropdowns': false
+      'flexMenu': true
+      'forms': true
+      'dropdowns': true
   }
 
   @getVersion: =>
