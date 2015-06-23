@@ -1,28 +1,28 @@
-var gulp        = require('gulp'),
-    argv        = require('yargs').argv,
+var gulp         = require('gulp'),
+    argv         = require('yargs').argv,
 
-    notify      = require('gulp-notify'),
-    filter      = require('gulp-filter'),
-    browserSync = require('browser-sync'),
-    reload      = browserSync.reload,
+    notify       = require('gulp-notify'),
+    filter       = require('gulp-filter'),
+    browserSync  = require('browser-sync'),
+    reload       = browserSync.reload,
 
-    gulpif      = require('gulp-if'),
-    plumber     = require('gulp-plumber'),
-    include     = require('gulp-include'),
-    uglify      = require('gulp-uglify'),
-    RevAll      = require('gulp-rev-all'),
+    gulpif       = require('gulp-if'),
+    plumber      = require('gulp-plumber'),
+    include      = require('gulp-include'),
+    uglify       = require('gulp-uglify'),
+    RevAll       = require('gulp-rev-all'),
 
-    sourcemaps  = require('gulp-sourcemaps'),
+    sourcemaps   = require('gulp-sourcemaps'),
 
-    sass        = require('gulp-sass'),
-    scsslint    = require('gulp-scss-lint'),
-    autoprefixer= require('gulp-autoprefixer'),
+    sass         = require('gulp-sass'),
+    scsslint     = require('gulp-scss-lint'),
+    autoprefixer = require('gulp-autoprefixer'),
 
-    coffee      = require('gulp-coffee'),
+    coffee       = require('gulp-coffee'),
 
-    jade        = require('gulp-jade'),
+    jade         = require('gulp-jade'),
 
-    config      = require('../config');
+    config       = require('../config');
 
 if(argv.production) {
   argv.development = false;
@@ -77,7 +77,7 @@ gulp.task('scss-lint', function() {
   return gulp.src(config.sass.src)
     .pipe(scsslint(
       config.sass.lint
-    ));
+  ));
 });
 
 gulp.task('assets-coffee', function() {
@@ -143,6 +143,5 @@ gulp.task('assets-revision', function() {
   return gulp.src(config.paths.build + '/**')
     // .pipe(revAll.revision())
     .pipe(gulp.dest('deploy'));
-})
-
+});
 
