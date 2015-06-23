@@ -1,7 +1,7 @@
 class Rig.Forms
 
   constructor: ->
-    console.log 'RIG Forms Instantiated'
+    Rig.log 'RIG Forms Instantiated'
     @setAutogrow() if $('[data-rig-ui-textarea="autogrow"]').length > 0
 
   setAutogrow: ->
