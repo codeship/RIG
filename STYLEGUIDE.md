@@ -67,7 +67,7 @@ When using SCSS you can make the relation even more clear when doing this:
 .block {
   ...
 
-  &.-modfier {
+  &.-modifier {
     ...
   }
 }
